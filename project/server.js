@@ -46,7 +46,7 @@ app.get("/search_for_events", function (req, res) {
       keywords: "Rap"
     }
   }, function(error, response, body) {
-    res.send(body)
+    res.send(body.events.event)
   })
 });
 
