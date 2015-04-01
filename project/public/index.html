@@ -27,9 +27,78 @@
 
 <body>
   
-  <h1>EventEaze</h1>
+  <div></h1>EventEaze</h1></div>
 
+  <section id="main"></sectiom>
+  <section id="modal"></section>
 
+<!--   <template id="homepage"> -->
+    <div id="home">
+      <input type="text" id="city" placeholder="City Name"></input>
+      <input type="text" id="date" placeholder="Date"></input>
+      <input type="text" id="keyword" placeholder="Keyword"></input>
+    <button>SHOW EVENTS</button>
+    </div>
+<!--   </template> -->
+
+<!-- Events list -->
+  <template id="event-list">
+    <div class="list-view">
+      <h1>Event: {{title}}</h1>
+      <h2>Date: {{start-time}}</h2>
+    <button>SELECT EVENT</button>
+    </div>
+  </template>
+
+<!-- Events modal -->
+  <template id="event-modal-template">
+    <div class="modal-view">
+      <h1>Event: {{title}}</h1>
+      <p>City: {{city_name}}</p>
+      <p>Start: {{start_time}}</p>
+      <p>Venue: {{venue_name}}</p>
+      <p>Address: {{venue_address}}</p>
+      <p>About: {{description}}</p>
+      <h1>CLOSE</h1>
+      <div id="latitude"={{latitude}}></div>
+      <div id="longitude"={{longitude}}></div>
+    </div>
+  </template>
+
+<!-- Bars list -->
+  <template id="bar-list">
+    <div class="list-view">
+      <h1>Name: {{name}}</h1>
+      <h2>About: {{text}}</h2>
+      <h2>Rating: {{rating}}</h2>
+    <button>SELECT BAR</button>
+    </div>
+  </template>  
+
+<!-- Bars modal -->
+  <template id="bar-template">
+    <div class="modal-view">
+      <h1>Name: {{name}}</h1>
+      <p>Rating: {{rating}}</p>
+      <p>About: {{text}}</p>
+      <p>Hours: {{status}}</p>
+      <p>Address: {{formattedAddress}}</p>
+      <p src="{{url}}"></p>
+      <h1>CLOSE</h1>
+    </div>
+  </template>
+
+<!-- my_events View -->
+  <template id="my_events-template">
+    <div id="my_events">
+      <h2>Event: {{name}}</h2>
+      <p>Start: {{start_time}}</p>
+      {{#each bars}}
+        <p>{{this.name}}</p>
+        <p>{{this.text}}</p>
+      {{/each}}
+    </div>
+  </template>
 
 </body>
 

@@ -8,7 +8,7 @@ var request     = require("request");
 
 //Models 
 //var Event = models.events;
-//var Drink = models.drinks;
+//var Bar = models.bars;
 //var Plan = models.plans; -> Join Table
 
 //Express 
