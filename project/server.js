@@ -8,11 +8,14 @@ var request     = require("request");
 
 //Models 
 //var Event = models.events;
-//var Drink = models.drinks;
+//var Bar = models.bars;
 //var Plan = models.plans; -> Join Table
 
 //Express 
 var app = express();
+
+//Require env
+require("dotenv").load();
 
 //Middleware 
 app.use(logger("dev"));
@@ -21,6 +24,57 @@ app.use(express.static(__dirname + "/public"));
 
 //Routes
 //----
+
+//EVENTFUL ROUTES
+
+//Get Events by City, Date, and Keyword.
+
+//Route made before index has been created.  Need to add var params later.
+app.get("/search_for_events", function (req, res) {
+  // var cityParams = req[0].query;
+  // var timeParams = req[1].query;
+  // var keywordParams = req[2].query;
+
+  request({
+    uri: "http://api.eventful.com/json/events/search",
+    method: "GET",
+    json: true,
+    qs: {
+      app_key: "MMVmB6tzJdSHNQR6",
+      location: "New York",
+      date: "Future",
+      keywords: "Rap"
+    }
+  }, function(error, response, body) {
+    res.send(body)
+  })
+});
+
+
+//FOURSQUARE ROUTES
+//Get restaurants by Show Objects Latitude plus Longitude.  (ll parameter)
+
+//Route made before index has been created.  
+app.get("/search_for_bars", function (req, res) {
+  // var latLong = this.venue.lat + ", " + this.venue.long 
+
+  request({
+    uri: "https://api.foursquare.com/v2/venues/explore",
+    method: "GET",
+    json: true,
+     qs: { 
+      ll: "40.7,-74",
+      section: "food",
+      client_id: process.env.FOURSQUARE_API_CLIENT_KEY,
+      client_secret: process.env.FOURSQUARE_API_SECRET_KEY,
+      v: "20150401"
+    }
+  }, function(error, response, body) {
+    res.send(body)
+  })
+  console.log(request)
+});
+
 
 
 
