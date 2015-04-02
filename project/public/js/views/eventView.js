@@ -10,11 +10,10 @@ App.Views.Event = Backbone.View.extend({
   },
 
   render: function() {
-   
     var data = this.model.toJSON();
     var compiledTemplate = this.eventTemplate(data);
     this.$el.append(compiledTemplate);
-    // this.$el.html(this.eventTemplate(this.model.toJSON() ) ); 
+    
   }
 
 });

@@ -70,7 +70,15 @@ app.get("/search_for_bars", function (req, res) {
       v: "20150401"
     }
   }, function(error, response, body) {
-    res.send(body)
+    var arrayOfBars = [];
+   for (var i =0; i < 10; i++) {
+    var currentVenue = body.response.groups[0].items[i];
+    console.log(currentVenue)
+    arrayOfBars.push(currentVenue)
+    
+   } 
+      res.send(arrayOfBars)
+
   })
   console.log(request)
 });
