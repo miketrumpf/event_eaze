@@ -34,17 +34,17 @@ app.get("/search_for_events", function (req, res) {
   // var cityParams = req[0].query;
   // var timeParams = req[1].query;
   // var keywordParams = req[2].query;
+  var query = req.query;
+  query.app_key = "MMVmB6tzJdSHNQR6";
 
   request({
     uri: "http://api.eventful.com/json/events/search",
     method: "GET",
     json: true,
-    qs: {
-      app_key: "MMVmB6tzJdSHNQR6",
-      location: "New York",
-      date: "Future",
-      keywords: "Rap"
-    }
+    qs: query
+      // location: "New York",
+      // date: "Future",
+      // keywords: "Rap"
   }, function(error, response, body) {
     res.send(body.events.event)
   })

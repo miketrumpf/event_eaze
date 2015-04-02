@@ -3,7 +3,13 @@ App.Collections.Events = Backbone.Collection.extend({
     console.log("Events Collection created")
   },
 
-  url: "search_for_events",
+  url: function() {    
+    var city = encodeURI($("#city").val());
+    var date = encodeURI($("#date").val());
+    var keyword = encodeURI($("#keyword").val());
+      return "/search_for_events?" + "&location=" + city + "&date=" + date + "&keywords=" + keyword
+    },
   
-  model: App.Models.Event
+  model: App.Models.Event,
+
 });

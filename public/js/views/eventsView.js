@@ -10,7 +10,8 @@ App.Views.Events = Backbone.View.extend({
   },
 
   renderAll: function() {
-  this.collection.each(this.renderOne, this);
+  //  this.$el.empty();
+    this.collection.each(this.renderOne, this);
   },
 
   renderOne: function(one) {

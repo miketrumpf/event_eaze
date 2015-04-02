@@ -27,29 +27,34 @@
   <script src="js/views/eventsView.js"></script>
   <script src="js/views/eventModalView.js"></script>
 
+  <script src="js/views/navigationView.js"></script>
+
 </head>
 
 <body>
   
   <div><h1>EventEaze</h1></div>
 
+  <section id="nav"></section>
   <section id="main"></sectiom>
   <section id="modal"></section>
 
-<!--   <template id="homepage"> -->
+  <template id="navigation">
     <div id="home">
       <input type="text" id="city" placeholder="City Name"></input>
       <input type="text" id="date" placeholder="Date"></input>
       <input type="text" id="keyword" placeholder="Keyword"></input>
-    <button>SHOW EVENTS</button>
+    <button id="select">SHOW EVENTS</button>
     </div>
-<!--   </template> -->
+  </template>
 
 <!-- Events list -->
   <template id="event-list">
     <div class="list-view">
       <h1>Event: {{title}}</h1>
       <h2>Date: {{start_time}}</h2>
+      <input type="hidden" id="lat" data="{{latitude}}"></input>
+      <input type="hidden" id="long" data="{{longitude}}"></input>
     <button>SELECT EVENT</button>
     </div>
   </template>
@@ -63,8 +68,6 @@
       <p>Venue Name: {{venue_name}}</p>
       <p>Street Address: {{venue_address}}</p>
       <p>Description: {{description}}</p>
-      <input type="hidden" id="lat">{{latitude}}</input>
-      <input type="hidden" id="long">{{longitude}}</input>
       <h1>CLOSE</h1>
     </div>
   </template>
