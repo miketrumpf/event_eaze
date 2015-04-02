@@ -4,11 +4,11 @@ var path        = require("path");
 var logger      = require("morgan");
 var bodyParser  = require("body-parser");
 var request     = require("request");
-//var models    = require("./models");
+var models      = require("./models");
 
 //Models 
-//var Event = models.events;
-//var Bar = models.bars;
+var Event = models.events;
+var Bar = models.bars;
 //var Plan = models.plans; -> Join Table
 
 //Express 

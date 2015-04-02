@@ -13,3 +13,4 @@ App.Views.Bar = Backbone.View.extend({
   }
 
 }); 
+

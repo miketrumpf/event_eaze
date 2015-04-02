@@ -16,4 +16,5 @@ $(function() {
   App.barsView = new App.Views.Bars({ collection: App.bars });
   App.bars.fetch(); 
 
+
 });

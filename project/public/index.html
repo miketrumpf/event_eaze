@@ -55,17 +55,17 @@
   </template>
 
 <!-- Events modal -->
-  <template id="event-modal-template">
+  <template id="event-template">
     <div class="modal-view">
-      <h1>Event: {{title}}</h1>
+      <h1>Title: {{title}}</h1>
       <p>City: {{city_name}}</p>
-      <p>Start: {{start_time}}</p>
-      <p>Venue: {{venue_name}}</p>
-      <p>Address: {{venue_address}}</p>
-      <p>About: {{description}}</p>
+      <p>Start Time: {{start_time}}</p>
+      <p>Venue Name: {{venue_name}}</p>
+      <p>Street Address: {{venue_address}}</p>
+      <p>Description: {{description}}</p>
+      <input type="hidden" id="lat">{{latitude}}</input>
+      <input type="hidden" id="long">{{longitude}}</input>
       <h1>CLOSE</h1>
-      <div id="latitude"={{latitude}}></div>
-      <div id="longitude"={{longitude}}></div>
     </div>
   </template>
 

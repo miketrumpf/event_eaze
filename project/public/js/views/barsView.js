@@ -18,4 +18,6 @@ App.Views.Bars = Backbone.View.extend({
     this.$el.append(newBarView.el);
   }
 
+
 }); 
+
