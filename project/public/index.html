@@ -46,26 +46,26 @@
 <!--   </template> -->
 
 <!-- Events list -->
-  <template id="event-list">
+  <template id="bar-list">
     <div class="list-view">
-      <h1>Event: {{title}}</h1>
-      <h2>Date: {{start-time}}</h2>
-    <button>SELECT EVENT</button>
+      <h1>Name: {{venue.name}}</h1>
+      <h2>About: {{tips.0.text}}</h2>
+      <h2>Rating: {{venue.rating}}</h2>
+    <button>SELECT BAR</button>
     </div>
   </template>
 
 <!-- Events modal -->
-  <template id="event-modal-template">
+  <template id="bar-template">
     <div class="modal-view">
-      <h1>Event: {{title}}</h1>
-      <p>City: {{city_name}}</p>
-      <p>Start: {{start_time}}</p>
-      <p>Venue: {{venue_name}}</p>
-      <p>Address: {{venue_address}}</p>
-      <p>About: {{description}}</p>
+      <h1>Name: {{venue.name}}</h1>
+      <p>Rating: {{venue.rating}}</p>
+      <p>About: {{tips.0.text}}</p>
+      <p>Hours: {{venue.hours.status}}</p>
+      <p>Street Address: {{venue.location.address}}</p>
+      <p>City Address: {{venue.location.city}}</p>
+      <p>Website: {{url}}</p>
       <h1>CLOSE</h1>
-      <div id="latitude"={{latitude}}></div>
-      <div id="longitude"={{longitude}}></div>
     </div>
   </template>
 
