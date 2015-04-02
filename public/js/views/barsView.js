@@ -9,6 +9,8 @@ App.Views.Bars = Backbone.View.extend({
   },
 
   renderAll: function() {
+    //$("#main").empty();
+    //this.$el.empty();
     this.collection.each(this.renderOne, this);
   },
 

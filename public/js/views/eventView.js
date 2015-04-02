@@ -3,7 +3,7 @@ App.Views.Event = Backbone.View.extend({
 
 
   initialize: function() {
-    console.log("New Event view created")
+    //console.log("New Event view created")
     // this.listenTo(this.model, "change", this.render);
     this.eventTemplate = Handlebars.compile($("#event-list").html());
     this.render();
@@ -14,6 +14,15 @@ App.Views.Event = Backbone.View.extend({
     var compiledTemplate = this.eventTemplate(data);
     this.$el.append(compiledTemplate);
     
+  },
+
+  events: {
+    "click #selected-event": "seachForBars"
+  },
+
+  seachForBars: function() {
+   // $("#main").empty();
+    App.bars.fetch();
   }
 
 });

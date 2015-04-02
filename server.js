@@ -56,14 +56,15 @@ app.get("/search_for_events", function (req, res) {
 
 //Route made before index has been created.  
 app.get("/search_for_bars", function (req, res) {
-  // var latLong = this.venue.lat + ", " + this.venue.long 
-
+  // var latLong = this.venue.lat + ", " + this.venue.long
+  var llToSearch = req.query['ll'];
   request({
     uri: "https://api.foursquare.com/v2/venues/explore",
     method: "GET",
     json: true,
      qs: { 
-      ll: "40.7,-74",
+      //ll: "40.7,-74",
+      ll: llToSearch,
       section: "food",
       client_id: process.env.FOURSQUARE_API_CLIENT_KEY,
       client_secret: process.env.FOURSQUARE_API_SECRET_KEY,
@@ -82,8 +83,6 @@ app.get("/search_for_bars", function (req, res) {
   })
   console.log(request)
 });
-
-
 
 
 //Server

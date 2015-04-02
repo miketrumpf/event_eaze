@@ -2,7 +2,7 @@ App.Views.Navigation = Backbone.View.extend({
   el: "#nav",
 
   initialize: function() {
-    console.log("Nav View");
+    //console.log("Nav View");
     // this.navTemplate = Handlebars.compile($("#navigation").html() );
     this.template = function() {
       return $("#navigation").html();
