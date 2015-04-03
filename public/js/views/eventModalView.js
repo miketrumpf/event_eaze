@@ -4,8 +4,8 @@ App.Views.EventModal = Backbone.View.extend({
   initialize : function() {
     console.log("Event Modal view created");
     this.template = Handlebars.compile($("#event-modal").html());
-    // this.render();
-    this.listenTo(this.model, "change", this.render)
+    this.render();
+    // this.listenTo(this.model, "change", this.render)
   },
 
   events: {

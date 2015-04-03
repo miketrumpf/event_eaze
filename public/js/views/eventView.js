@@ -22,7 +22,6 @@ App.Views.Event = Backbone.View.extend({
 
   },
 
-  // showModal
 
     getFullEventInfo: function() {
     console.log("clicked")
