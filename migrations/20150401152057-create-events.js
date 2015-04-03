@@ -15,7 +15,7 @@ module.exports = {
         type: DataTypes.STRING
       },
       start_time: {
-        type: DataTypes.INTEGER
+        type: DataTypes.STRING
       },
       venue_name: {
         type: DataTypes.STRING
@@ -27,10 +27,10 @@ module.exports = {
         type: DataTypes.TEXT
       },
       latitude: {
-        type: DataTypes.INTEGER
+        type: DataTypes.STRING
       },
       longitude: {
-        type: DataTypes.INTEGER
+        type: DataTypes.STRING
       }
     }).done(done);
   },
