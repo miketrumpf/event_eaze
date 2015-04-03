@@ -36,8 +36,15 @@
   <div><h1>EventEaze</h1></div>
 
   <section id="nav"></section>
-  <section id="main"></sectiom>
-  <section id ="side-view"></section> 
+  
+  <section id="main">
+    <h1>Shows!</h1>
+  </section>
+  
+  <section id="bar-results">
+    <h1>Bars Nearby!</h1>
+  </section>
+
   <section id="modal"></section>
 
   <template id="navigation">
@@ -57,8 +64,8 @@
       <input type="hidden" id ="lat" data-lat="{{latitude}}"></input>
       <input type="hidden" id ="long" data-long="{{longitude}}"></input>
     <button id="more-info">More Info</button>  
-    <button id="selected-event">SELECT EVENT</button>
     <button id="save-event">Save Event</button>
+    <button id="show-bars">Show Bars!</button>
     </div>
   </template>
 
@@ -72,6 +79,18 @@
       <p>Street Address: {{venue_address}}</p>
       <p>Description: {{description}}</p>
       <span class="close-modal">CLOSE</span>
+    </div>
+  </template>
+
+  <template id="single-event">
+    <div class="single-view">
+      <h1>Title: {{title}}</h1>
+      <p>City: {{city_name}}</p>
+      <p>Start Time: {{start_time}}</p>
+      <p>Venue Name: {{venue_name}}</p>
+      <p>Street Address: {{venue_address}}</p>
+      <p>Description: {{description}}</p>
+      <span class="less-info">Less Info</span>
     </div>
   </template>
 
