@@ -21,7 +21,6 @@ App.Views.Event = Backbone.View.extend({
   },
 
   seachForBars: function() {
-   // $("#main").empty();
     App.bars.fetch();
   }
 

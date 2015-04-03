@@ -10,23 +10,12 @@ App.Views.Events = Backbone.View.extend({
   },
 
   renderAll: function() {
-  //  this.$el.empty();
     this.collection.each(this.renderOne, this);
   },
 
   renderOne: function(one) {
-    
     var newEventView = new App.Views.Event({model: one});
     this.$el.append(newEventView.el);
   }
 
-  // events: {
-  //   "click #selected-event": "seachForBars"
-  // },
-
-  // seachForBars: function() {
-  //   App.bars.fetch();
-  // }
-
-
-})
+});

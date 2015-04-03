@@ -8,6 +8,8 @@ var App = {
 $(function() {
   console.log('Loaded, bro.');
 
+  App.navigation = new App.Views.Navigation();
+
   App.events = new App.Collections.Events;
   App.eventsView = new App.Views.Events({collection: App.events});
   //App.events.fetch();
@@ -15,7 +17,5 @@ $(function() {
   App.bars = new App.Collections.Bars;
   App.barsView = new App.Views.Bars({ collection: App.bars });
   // App.bars.fetch(); 
-
-  App.navigation = new App.Views.Navigation();
 
 });
