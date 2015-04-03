@@ -7,7 +7,7 @@
   padding: 25px;
   padding-bottom: 50px;
   border: 1px solid white;
-  background-color: slateblue;
+  background-color: slategray;
   width: 50%;
   z-index: 100; /* makes the div the top layer, so it’ll lay on top of the other content */
 }
@@ -44,4 +44,8 @@ width: 45%;
 text-align: center;
 border: 1px solid black;
 
+}
+
+.single-view {
+  background-color: slategray;
 }
