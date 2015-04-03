@@ -6,4 +6,5 @@ App.Models.Event = Backbone.Model.extend({
 
   urlRoot: "/search_for_events",
 
+  
 });
