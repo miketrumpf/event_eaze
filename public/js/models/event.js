@@ -4,8 +4,6 @@ App.Models.Event = Backbone.Model.extend({
     //console.log("Event Models Created");
   },
 
-  url: "/events",
-
-  
-  
+  url: "/events"
+    
 });

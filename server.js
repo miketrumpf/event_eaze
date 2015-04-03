@@ -46,26 +46,27 @@ app.get("/search_for_events", function (req, res) {
       // date: "Future",
       // keywords: "Rap"
   }, function(error, response, body) {
+    
     res.send(body.events.event)
-  })
+    //console.log(body.events.event);
 });
 
+
 app.post("/events", function (req, res) {
-  Event
-    .create(req.body)
-    .then(function(newEvent) {
-      res.send(newEvent)
-    })
+  var events = req.body;
+  Event.create(events)
+       .then(function(newEntry) {
+         res.send(newEntry)
+         });
+     })
 });
 
 app.get("/events", function (req, res) {
-  Event
-  .findAll()
-  .then(function(events) {
-    res.send(events);
-  });
+  Event.findAll()
+       .then(function(events) {
+          res.send(events);
+       });
 });
-
 
 
 //FOURSQUARE ROUTES
@@ -98,7 +99,7 @@ app.get("/search_for_bars", function (req, res) {
       res.send(arrayOfBars)
 
   })
-  console.log(request)
+  //console.log(request)
 });
 
 

@@ -3,12 +3,12 @@ module.exports = function(sequelize, DataTypes) {
   var events = sequelize.define("events", {
     title: DataTypes.STRING,
     city_name: DataTypes.STRING,
-    start_time: DataTypes.INTEGER,
+    start_time: DataTypes.STRING,
     venue_name: DataTypes.STRING,
     venue_address: DataTypes.STRING,
     description: DataTypes.TEXT,
-    latitude: DataTypes.INTEGER,
-    longitude: DataTypes.INTEGER
+    latitude: DataTypes.STRING,
+    longitude: DataTypes.STRING
   }, {
 
     timestamps: false,

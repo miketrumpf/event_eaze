@@ -21,8 +21,11 @@ App.Views.Event = Backbone.View.extend({
   events: {
     "click #show-bars": "seachForBars",
     "click #more-info": "getFullEventInfo",
+    "click #save-event": "callSaveEvent",
     "click .less-info": "getLessEventInfo"
   },
+
+ 
 
   seachForBars: function() {
     this.$el.empty();
@@ -34,11 +37,18 @@ App.Views.Event = Backbone.View.extend({
 
   },
 
-    getFullEventInfo: function() {
-    console.log("clicked")
-    
+  callSaveEvent: function() {
+    var events = this.model.attributes;
+
+    var eventsModel = ({title: events.title, city_name: events.city_name, start_time: events.start_time, venue_name: events.venue_name, venue_addess: events.venue_address, description: events.description, latitude: events.latitude, longitude: events.longitude}); 
+
+    App.event = new App.Models.Event;
+    App.event.save(eventsModel);
+  },
+
+  getFullEventInfo: function() {
+    console.log("clicked") 
     var newEventModalView = new App.Views.EventModal({model: this.model})
-    
 
   },
 
@@ -48,6 +58,7 @@ App.Views.Event = Backbone.View.extend({
     var data = this.model.toJSON();
     var compiledTemplate = this.eventTemplate(data);
     this.$el.append(compiledTemplate);
+
   }
 
 });
