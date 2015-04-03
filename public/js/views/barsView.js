@@ -1,6 +1,6 @@
 App.Views.Bars = Backbone.View.extend({
 
-  el: "#main",
+  el: "#bar-results",
 
   initialize: function() {
     this.listenTo(this.collection, "reset", this.renderOne);

@@ -50,6 +50,23 @@ app.get("/search_for_events", function (req, res) {
   })
 });
 
+app.post("/events", function (req, res) {
+  Event
+    .create(req.body)
+    .then(function(newEvent) {
+      res.send(newEvent)
+    })
+});
+
+app.get("/events", function (req, res) {
+  Event
+  .findAll()
+  .then(function(events) {
+    res.send(events);
+  });
+});
+
+
 
 //FOURSQUARE ROUTES
 //Get restaurants by Show Objects Latitude plus Longitude.  (ll parameter)

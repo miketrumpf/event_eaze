@@ -29,3 +29,19 @@
 #modal h2 {
   margin-top: 0;
 }
+
+#main {
+  float: left;
+  width: 45%;
+  text-align: center;
+  border: 1px solid black;
+
+}
+
+#bar-results {
+float: right;
+width: 45%;
+text-align: center;
+border: 1px solid black;
+
+}
