@@ -7,7 +7,7 @@ var App = {
 
 $(function() {
   console.log('Loaded, bro.');
-
+  // App.event = new App.Models.Event;
   App.events = new App.Collections.Events;
   App.eventsView = new App.Views.Events({collection: App.events});
   //App.events.fetch();

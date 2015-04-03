@@ -60,7 +60,7 @@
   </template>
 
 <!-- Events modal -->
-  <template id="event-template">
+  <template id="event-modal">
     <div class="modal-view">
       <h1>Title: {{title}}</h1>
       <p>City: {{city_name}}</p>
@@ -68,7 +68,7 @@
       <p>Venue Name: {{venue_name}}</p>
       <p>Street Address: {{venue_address}}</p>
       <p>Description: {{description}}</p>
-      <h1>CLOSE</h1>
+      <span class="close-modal">CLOSE</span>
     </div>
   </template>
 
@@ -92,7 +92,7 @@
       <p>Street Address: {{venue.location.address}}</p>
       <p>City Address: {{venue.location.city}}</p>
       <p>Website: {{url}}</p>
-      <h1>CLOSE</h1>
+      <span class="close-modal">CLOSE</span>
     </div>
   </template>
 
