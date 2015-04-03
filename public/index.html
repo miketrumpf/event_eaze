@@ -55,6 +55,7 @@
       <h2>Date: {{start_time}}</h2>
       <input type="hidden" id ="lat" data-lat="{{latitude}}"></input>
       <input type="hidden" id ="long" data-long="{{longitude}}"></input>
+    <button id="more-info">More Info</button>  
     <button id="selected-event">SELECT EVENT</button>
     </div>
   </template>
@@ -78,7 +79,8 @@
       <h1>Name: {{venue.name}}</h1>
       <h2>About: {{tips.0.text}}</h2>
       <h2>Rating: {{venue.rating}}</h2>
-    <button>SELECT BAR</button>
+    <button id="more-bar-info">More Info</button>   
+    <button id="selected-bar">SELECT BAR</button>
     </div>
   </template>  
 
@@ -91,7 +93,6 @@
       <p>Hours: {{venue.hours.status}}</p>
       <p>Street Address: {{venue.location.address}}</p>
       <p>City Address: {{venue.location.city}}</p>
-      <p>Website: {{url}}</p>
       <span class="close-modal">CLOSE</span>
     </div>
   </template>

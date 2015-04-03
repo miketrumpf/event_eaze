@@ -19,7 +19,7 @@ App.Views.Event = Backbone.View.extend({
 
   events: {
     "click #selected-event": "seachForBars",
-    "click .list-view": "getFullEventInfo"
+    "click #more-info": "getFullEventInfo"
   },
 
   seachForBars: function() {
