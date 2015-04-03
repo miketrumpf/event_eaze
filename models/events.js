@@ -1,4 +1,4 @@
-"use strict";
+ "use strict";
 module.exports = function(sequelize, DataTypes) {
   var events = sequelize.define("events", {
     title: DataTypes.STRING,
@@ -15,9 +15,12 @@ module.exports = function(sequelize, DataTypes) {
 
     classMethods: {
       associate: function(models) {
-        // associations can be defined here
+        events.belongsToMany(models.bars, {
+          through: "events_bars",
+          foreignKey: "event_id"
+        });
       }
     }
   });
   return events;
-};
+}; 
