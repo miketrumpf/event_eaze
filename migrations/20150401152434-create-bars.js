@@ -25,9 +25,6 @@ module.exports = {
       },
       cityAddress: {
         type: DataTypes.STRING
-      },
-      url: {
-        type: DataTypes.STRING
       }
     }).done(done);
   },

@@ -7,16 +7,18 @@ module.exports = function(sequelize, DataTypes) {
     hours: DataTypes.STRING,
     streetAddress: DataTypes.STRING,
     cityAddress: DataTypes.STRING,
-    url: DataTypes.STRING
   }, {
 
     timestamps: false, 
     
     classMethods: {
       associate: function(models) {
-        // associations can be defined here
-      }
+        bars.belongsToMany(models.events, {
+          through: "events_bars",
+          foreignKey: "bar_id"
+        });
+      } 
     }
   });
   return bars;
-};
+}; 
