@@ -4,7 +4,7 @@ App.Views.Bars = Backbone.View.extend({
 
   initialize: function() {
     this.listenTo(this.collection, "reset", this.renderOne);
-    this.listenTo(this.collection, "add", this.renderOne)
+    this.listenTo(this.collection, "add", this.renderOne);
     this.renderAll();
   },
 

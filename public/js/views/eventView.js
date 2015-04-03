@@ -3,7 +3,7 @@ App.Views.Event = Backbone.View.extend({
 
 
   initialize: function() {
-    console.log("New Event view created")
+    //console.log("New Event view created")
     // this.listenTo(this.model, "change", this.render);
     this.eventTemplate = Handlebars.compile($("#event-list").html());
     // $("#main").on("click", ".event", this.getFullEventInfo(this))
@@ -18,16 +18,21 @@ App.Views.Event = Backbone.View.extend({
   },
 
   events: {
+    "click #selected-event": "seachForBars",
     "click .list-view": "getFullEventInfo"
-
   },
 
+  seachForBars: function() {
+    App.bars.fetch();
+
+  },
 
     getFullEventInfo: function() {
     console.log("clicked")
     
     var newEventModalView = new App.Views.EventModal({model: this.model})
     
+
   }
 
 });

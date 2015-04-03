@@ -6,10 +6,10 @@ App.Views.Bar = Backbone.View.extend({
   },
 
   render: function() {
-    
     var data = this.model.toJSON();
     var compiledTemplate = this.barTemplate(data); 
     this.$el.append(compiledTemplate);
+
   }
 
 }); 
