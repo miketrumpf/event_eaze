@@ -92,7 +92,6 @@ app.delete("/events/:id", function (req, res) {
 //FOURSQUARE ROUTES
 //Get restaurants by Show Objects Latitude plus Longitude.  (ll parameter)
 
-//Route made before index has been created.  
 app.get("/search_for_bars", function (req, res) {
   // var latLong = this.venue.lat + ", " + this.venue.long
   var llToSearch = req.query['ll'];
@@ -122,7 +121,7 @@ app.get("/search_for_bars", function (req, res) {
   //console.log(request)
 });
 
-
+//route to save bar
 app.post("/bars", function (req, res) {
   var bars = req.body;
   Bar.create(bars)
@@ -132,11 +131,34 @@ app.post("/bars", function (req, res) {
      //})
 });
 
+//route to find all saved bars
 app.get("/bars", function (req, res) {
   Bar.findAll()
        .then(function(bars) {
           res.send(bars);
        });
+});
+
+//route to get bar by id
+app.get("/bars/:id", function (req, res) {
+  Bar
+  .findOne(req.params.id)
+  .then(function(bar) {
+    res.send(bar);
+  });
+});
+
+//route to delete bar
+app.delete("/bars/:id", function (req, res) {
+  Bar
+  .findOne(req.params.id)
+  .then(function(bar) {
+    bar
+      .destroy()
+      .then(function() {
+        res.send(bar);
+      });
+  });
 });
 
 //----------------
