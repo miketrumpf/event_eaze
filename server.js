@@ -51,7 +51,7 @@ app.get("/search_for_events", function (req, res) {
     //console.log(body.events.event);
 });
 
-
+//route to create event
 app.post("/events", function (req, res) {
   var events = req.body;
   Event.create(events)
@@ -61,10 +61,30 @@ app.post("/events", function (req, res) {
      })
 });
 
+//route to get list of events
 app.get("/events", function (req, res) {
   Event.findAll()
        .then(function(events) {
           res.send(events);
+       });
+});
+
+//route to get specific event
+app.get("/events/:id", function (req, res) {
+  Event.findOne(req.params.id)
+       .then(function(oneEvent) {
+        res.send(oneEvent);
+       });
+});
+
+//route to delete event
+app.delete("/events/:id", function (req, res) {
+  Event.findOne(req.params.id)
+       .then(function(oneEvent) {
+         oneEvent.destroy()
+                 .then(function() {
+                   res.send(oneEvent);
+                 });
        });
 });
 
@@ -119,6 +139,39 @@ app.get("/bars", function (req, res) {
        });
 });
 
+//----------------
+//Events <-> Bars
+//----------------
+
+app.put("/events/:id/add_bar", function (req, res) {
+
+  var eventId = req.params.id;
+  var barId = req.body.bar_id;
+
+  Event.findOne(eventId)
+       .then(function(events) {
+         Bar.findOne(barId)
+            .then(function(bar) {
+              post.addBar(bar);
+              res.send("Linked!");
+            });
+       });
+});
+
+app.put("/events/:id/remove_bar", function (req, res) {
+
+  var eventId = req.params.id;
+  var barId = req.body.bar_id;
+
+  Event.findOne(eventId)
+       .then(function(events) {
+         Bar.findOne(barId)
+            .then(function(bar) {
+              post.removeBar(bar);
+              res.send("Yay");
+            });
+       });
+});
 
 //Server
 app.listen(3000, function() {
