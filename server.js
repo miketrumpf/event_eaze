@@ -103,7 +103,29 @@ app.get("/search_for_bars", function (req, res) {
 });
 
 
+app.post("/bars", function (req, res) {
+  var bars = req.body;
+  Bar.create(bars)
+      .then(function(newEntry) {
+        res.send(newEntry)
+         });
+     //})
+});
+
+app.get("/bars", function (req, res) {
+  Bar.findAll()
+       .then(function(bars) {
+          res.send(bars);
+       });
+});
+
+
 //Server
 app.listen(3000, function() {
   console.log("Running!");
 });
+
+
+
+
+
