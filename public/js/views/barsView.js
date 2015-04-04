@@ -3,12 +3,13 @@ App.Views.Bars = Backbone.View.extend({
   el: "#bar-results",
 
   initialize: function() {
-    this.listenTo(this.collection, "reset", this.renderOne);
-    this.listenTo(this.collection, "add", this.renderOne);
-    this.renderAll();
+    this.listenTo(this.collection, "reset", this.renderAll);
+    this.listenTo(this.collection, "add", this.renderAll);
+    // this.renderAll();
   },
 
   renderAll: function() {
+    this.$el.empty();
     this.collection.each(this.renderOne, this);
   },
 
