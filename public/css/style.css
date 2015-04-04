@@ -31,14 +31,17 @@
 }
 
 #main {
+  position: relative;
   float: left;
   width: 45%;
   text-align: center;
   border: 1px solid black;
+  margin-top: 0px;
 
 }
 
 #bar-results {
+position: relative;
 float: right;
 width: 45%;
 text-align: center;
@@ -48,4 +51,18 @@ border: 1px solid black;
 
 .single-view {
   background-color: slategray;
+}
+
+#bars-nearby {
+  position: relative;
+  float: right;
+  text-align: center;
+  margin-right: 20%;
+}
+
+#events-nearby {
+  position: relative;
+  float: left;
+  text-align: center;
+  margin-left: 18%;
 }

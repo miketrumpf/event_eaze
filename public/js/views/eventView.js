@@ -28,7 +28,11 @@ App.Views.Event = Backbone.View.extend({
  
 
   seachForBars: function() {
+    
+    //Deletes the single event view
     this.$el.empty();
+    
+    //replaces with single event detailed view
     var data = this.model.toJSON()
     var compiledTemplate = this.singleEventTemplate(data);
     this.$el.append(compiledTemplate)
