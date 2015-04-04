@@ -4,6 +4,6 @@ App.Models.Bar = Backbone.Model.extend({
     console.log("Bar Models Created");
   },
 
-  urlRoot: "/search_for_bars"
+  url: "/bars"
 
 });

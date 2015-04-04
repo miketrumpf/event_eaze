@@ -13,7 +13,8 @@ App.Views.Bar = Backbone.View.extend({
   },
 
   events: {
-    "click #more-bar-info": "getFullBarInfo"
+    "click #more-bar-info": "getFullBarInfo",
+    "click #save-bar": "saveBar"
   },
 
   getFullBarInfo: function() {
@@ -21,6 +22,17 @@ App.Views.Bar = Backbone.View.extend({
 
     var newBarModalView = new App.Views.BarModal({model: this.model})
   
+  },
+
+  saveBar: function() {
+    console.log(this.model);
+
+    var bars = this.model.attributes;
+
+    var barsModel = ({name: bars.venue.name, rating: bars.venue.rating, text: bars.tips[0].text, hours: bars.venue.hours.status, streetAddress: bars.venue.location.address, cityAddress: bars.venue.location.city});
+
+    App.bars = new App.Models.Bar;
+    App.bars.save(barsModel);
   }
 
 }); 

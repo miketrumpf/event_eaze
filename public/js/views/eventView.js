@@ -42,6 +42,7 @@ App.Views.Event = Backbone.View.extend({
   },
 
   callSaveEvent: function() {
+    
     var events = this.model.attributes;
 
     var eventsModel = ({title: events.title, city_name: events.city_name, start_time: events.start_time, venue_name: events.venue_name, venue_addess: events.venue_address, description: events.description, latitude: events.latitude, longitude: events.longitude}); 
