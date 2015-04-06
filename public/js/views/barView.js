@@ -32,6 +32,8 @@ App.Views.Bar = Backbone.View.extend({
     // var teste = new App.Collections.MyEvents({model: model});
     // var lastId = teste.last().id;
     // debugger
+    var lastId = App.myEvents.last().id;
+    console.log(lastId);
 
     var bars = this.model.attributes;
 
