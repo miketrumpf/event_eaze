@@ -115,8 +115,8 @@ app.get("/search_for_bars", function (req, res) {
       //ll: "40.7,-74",
       ll: llToSearch,
       section: "food",
-      client_id: process.env.FOURSQUARE_API_CLIENT_KEY,
-      client_secret: process.env.FOURSQUARE_API_SECRET_KEY,
+      client_id:"BNAPSUX5Q2VGUM2JOAQGHXHGCK5WGGHWQPF2VWKZJG5XLKUL",
+      client_secret:"F4OSS11HXEOPZP41WPYYXDSV2NHR2BYZGZWNX44OJ3PEBLZ0",
       v: "20150401"
     }
   }, function(error, response, body) {
