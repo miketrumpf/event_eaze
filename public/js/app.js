@@ -20,7 +20,7 @@ $(function() {
 
   App.myEvents = new App.Collections.MyEvents;
   App.myEventsView = new App.Views.MyEventsView({ collection: App.myEvents });
-  //App.myEvents.fetch();
+  App.myEvents.fetch();
 
 
   //App.map = new App.Collections.MyEvents;
