@@ -143,19 +143,19 @@ app.post("/bars", function (req, res) {
      //})
 });
 
-// app.post("/events/:id/bars", function (req, res) {
-//   var eventId = req.params.id;
-//   var barParams = req.body;
+app.post("/events/:id/bars", function (req, res) {
+  var eventId = req.params.id;
+  var barParams = req.body;
 
-//   Event.findOne(eventId)
-//        .then(function(oneEvent) {
-//         Bar.create(barParams)
-//            .then(function(newBar) {
-//              oneEvent.addBar(newBar)
-//               res.send(newBar);
-//            });
-//        });
-// });
+  Event.findOne(eventId)
+       .then(function(oneEvent) {
+        Bar.create(barParams)
+           .then(function(newBar) {
+             oneEvent.addBar(newBar)
+              res.send(newBar);
+           });
+       });
+});
 
 //route to find all saved bars
 app.get("/bars", function (req, res) {
