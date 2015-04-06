@@ -25,6 +25,9 @@ module.exports = {
       },
       cityAddress: {
         type: DataTypes.STRING
+      },
+      event_id: {
+        type: DataTypes.INTEGER
       }
     }).done(done);
   },

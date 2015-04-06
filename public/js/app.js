@@ -18,4 +18,15 @@ $(function() {
   App.barsView = new App.Views.Bars({ collection: App.bars });
   // App.bars.fetch(); 
 
+  App.myEvents = new App.Collections.MyEvents;
+  App.myEventsView = new App.Views.MyEventsView({ collection: App.myEvents });
+  //App.myEvents.fetch();
+
+
+  //App.map = new App.Collections.MyEvents;
+  //App.mapView = new App.Views.MapView();
+  //App.mapView.initialize();
+
+  //google.maps.event.addDomListener(window, "load", initialize);
+
 });

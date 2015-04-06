@@ -14,14 +14,18 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.0/handlebars.min.js"></script>
  
 
+  <script src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
+
   <!--<script src="bundle.js"></script>-->
   <script src="js/app.js"></script> 
 
   <script src="js/models/bar.js"></script>
   <script src="js/models/event.js"></script>
+  <script src="js/models/myEvent.js"></script>
 
   <script src="js/collections/bars.js"></script>
   <script src="js/collections/events.js"></script>
+  <script src="js/collections/myEvents.js"></script>
 
   <script src="js/views/barView.js"></script>
   <script src="js/views/barsView.js"></script>
@@ -30,6 +34,11 @@
   <script src="js/views/eventView.js"></script>
   <script src="js/views/eventsView.js"></script>
   <script src="js/views/eventModalView.js"></script>
+
+  <script src="js/views/myEventView.js"></script>
+  <script src="js/views/myEventsView.js"></script>
+
+  <script src="js/views/mapView.js"></script>
 
   <script src="js/views/navigationView.js"></script>
 
@@ -40,17 +49,18 @@
   <div><h1>EventEaze</h1></div>
 
   <section id="nav"></section>
+
+  <section id="saved"></section>
   
   <h1 id="events-nearby">Events!</h1>
   <h1 id="bars-nearby">Nearby Bars!</h1>
 
-
   <section id="main">
-    <h1>Events!</h1>
+<!--     <h1>Events!</h1> -->
   </section>
   
   <section id="bar-results">
-    <h1>Bars Nearby!</h1>
+<!--     <h1>Bars Nearby!</h1> -->
   </section>
 
   <section id="modal"></section>
@@ -61,6 +71,7 @@
       <input type="text" id="date" placeholder="Date"></input>
       <input type="text" id="keyword" placeholder="Keyword"></input>
     <button id="select">SHOW EVENTS</button>
+    <button id="my-events">My saved events</button>
     </div>
   </template>
 
@@ -85,6 +96,8 @@
       <p>Venue Name: {{venue_name}}</p>
       <p>Street Address: {{venue_address}}</p>
       <p>Description: {{description}}</p>
+      <input type="hidden" id ="lat" data-lat="{{latitude}}"></input>
+      <input type="hidden" id ="long" data-long="{{longitude}}"></input>
       <span class="close-modal">CLOSE</span>
     </div>
   </template>
@@ -128,7 +141,7 @@
 <!-- my_events View -->
   <template id="my-events-template">
     <div id="my-events">
-      <h2>Event: {{name}}</h2>
+      <h2>Event: {{title}}</h2>
       <p>Start: {{start_time}}</p>
       {{#each bars}}
         <p>{{this.name}}</p>
@@ -136,6 +149,12 @@
       {{/each}}
     </div>
   </template>
+
+
+<!-- Google Maps -->
+  <div id="map-canvas"></div>
+
+<!-- <div id="map" style="width:500px;height:380px;"></div> -->
 
 
 </body>

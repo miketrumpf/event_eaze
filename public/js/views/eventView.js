@@ -69,11 +69,14 @@ App.Views.Event = Backbone.View.extend({
     App.bars.fetch();
 
     App.event = new App.Models.Event;
-    App.event.save(eventsModel).always(function(){
-      console.log("got here");
-      App.bars.fetch()
 
-    })
+    App.event.save(eventsModel).always(function() {
+      App.bars.fetch();
+    });
+
+    console.log(this.model.id);
+
+
   },
 
   getFullEventInfo: function() {
