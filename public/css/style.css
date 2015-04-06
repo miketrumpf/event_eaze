@@ -46,6 +46,7 @@ float: right;
 width: 45%;
 text-align: center;
 border: 1px solid black;
+overflow: scroll;
 
 }
 
