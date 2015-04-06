@@ -25,6 +25,12 @@ app.use(express.static(__dirname + "/public"));
 //Routes
 //----
 
+// app.get("/show_map", function (req, res) {
+//   var query = req.query;
+
+//   request({ })
+// })
+
 //EVENTFUL ROUTES
 
 //Get Events by City, Date, and Keyword.
@@ -63,15 +69,21 @@ app.post("/events", function (req, res) {
 
 //route to get list of events
 app.get("/events", function (req, res) {
+
+  //console.log(Event.body);
+
   Event.findAll()
        .then(function(events) {
-          res.send(events);
-       });
+        res.send(events)
+  });
 });
 
 //route to get specific event
 app.get("/events/:id", function (req, res) {
-  Event.findOne(req.params.id)
+  Event.findOne({
+        where: {id: req.params.id},
+        include: [Bar]
+      })
        .then(function(oneEvent) {
         res.send(oneEvent);
        });
@@ -111,7 +123,7 @@ app.get("/search_for_bars", function (req, res) {
     var arrayOfBars = [];
    for (var i =0; i < 10; i++) {
     var currentVenue = body.response.groups[0].items[i];
-    console.log(currentVenue)
+    //console.log(currentVenue)
     arrayOfBars.push(currentVenue)
     
    } 
@@ -130,6 +142,20 @@ app.post("/bars", function (req, res) {
          });
      //})
 });
+
+// app.post("/events/:id/bars", function (req, res) {
+//   var eventId = req.params.id;
+//   var barParams = req.body;
+
+//   Event.findOne(eventId)
+//        .then(function(oneEvent) {
+//         Bar.create(barParams)
+//            .then(function(newBar) {
+//              oneEvent.addBar(newBar)
+//               res.send(newBar);
+//            });
+//        });
+// });
 
 //route to find all saved bars
 app.get("/bars", function (req, res) {
@@ -165,35 +191,35 @@ app.delete("/bars/:id", function (req, res) {
 //Events <-> Bars
 //----------------
 
-app.put("/events/:id/add_bar", function (req, res) {
+// app.put("/events/:id/add_bar", function (req, res) {
 
-  var eventId = req.params.id;
-  var barId = req.body.bar_id;
+//   var eventId = req.params.id;
+//   var barId = req.body.bar_id;
 
-  Event.findOne(eventId)
-       .then(function(events) {
-         Bar.findOne(barId)
-            .then(function(bar) {
-              post.addBar(bar);
-              res.send("Linked!");
-            });
-       });
-});
+//   Event.findOne(eventId)
+//        .then(function(events) {
+//          Bar.findOne(barId)
+//             .then(function(bar) {
+//               post.addBar(bar);
+//               res.send("Linked!");
+//             });
+//        });
+// });
 
-app.put("/events/:id/remove_bar", function (req, res) {
+// app.put("/events/:id/remove_bar", function (req, res) {
 
-  var eventId = req.params.id;
-  var barId = req.body.bar_id;
+//   var eventId = req.params.id;
+//   var barId = req.body.bar_id;
 
-  Event.findOne(eventId)
-       .then(function(events) {
-         Bar.findOne(barId)
-            .then(function(bar) {
-              post.removeBar(bar);
-              res.send("Yay");
-            });
-       });
-});
+//   Event.findOne(eventId)
+//        .then(function(events) {
+//          Bar.findOne(barId)
+//             .then(function(bar) {
+//               post.removeBar(bar);
+//               res.send("Yay");
+//             });
+//        });
+// });
 
 //Server
 app.listen(3000, function() {

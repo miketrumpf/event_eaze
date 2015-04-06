@@ -11,7 +11,8 @@ App.Views.Navigation = Backbone.View.extend({
   },
 
   events: {
-    "click #select": "searchForEvents"
+    "click #select": "searchForEvents",
+    "click #my-events": "seeMyEvents"
   },
 
   render: function() {
@@ -21,6 +22,13 @@ App.Views.Navigation = Backbone.View.extend({
 
   searchForEvents: function() {
     App.events.fetch();
+  },
+
+  seeMyEvents: function() {
+    App.myEvents.fetch();
+
+    //App.mapView.initialize();
+    // google.maps.event.addDomListener(window, 'load', App.mapView.initialize);
   }
 
 });

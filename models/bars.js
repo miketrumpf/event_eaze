@@ -7,16 +7,14 @@ module.exports = function(sequelize, DataTypes) {
     hours: DataTypes.STRING,
     streetAddress: DataTypes.STRING,
     cityAddress: DataTypes.STRING,
+    event_id: DataTypes.INTEGER
   }, {
 
     timestamps: false, 
     
     classMethods: {
       associate: function(models) {
-        bars.belongsToMany(models.events, {
-          through: "events_bars",
-          foreignKey: "bar_id"
-        });
+        bars.belongsTo(models.events, {foreignKey: "event_id"});
       } 
     }
   });

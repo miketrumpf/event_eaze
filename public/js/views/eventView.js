@@ -48,7 +48,12 @@ App.Views.Event = Backbone.View.extend({
     var eventsModel = ({title: events.title, city_name: events.city_name, start_time: events.start_time, venue_name: events.venue_name, venue_addess: events.venue_address, description: events.description, latitude: events.latitude, longitude: events.longitude}); 
 
     App.event = new App.Models.Event;
-    App.event.save(eventsModel);
+    App.event.save(eventsModel).always(function() {
+      App.bars.fetch();
+    });
+
+    console.log(this.model.id);
+
   },
 
   getFullEventInfo: function() {
