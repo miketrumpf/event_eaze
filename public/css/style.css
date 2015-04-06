@@ -1,3 +1,50 @@
+@import url(http://fonts.googleapis.com/css?family=Poiret+One|Lobster);
+
+body {
+  background-image: url("../images/concert.jpg");
+  background-size: 150%;
+  background-repeat: no-repeat;
+  font-family: 'Poiret One', cursive;
+  color: black;
+}
+
+h1 {
+  font-family: 'Lobster', cursive;
+}
+
+#eventeaze h1 {
+  font-size: 50px;
+  color: white;
+  margin-left: 45px;
+}
+
+#home {
+  margin-left: 350px;
+/*  display: block;
+  position: center;
+  margin-right: auto;
+  margin-left: auto;*/
+  margin-bottom: 50px;
+}
+
+input {
+  border: none;
+  border-radius: 2px;
+  font-size: 16px;
+  padding: 2px 2px 2px 2px;
+  background: grey;
+  font-color: white;
+}
+
+button {
+  font-size: 16px;
+  margin-top: 10px;
+  float: center;
+  border: none;
+  background-color: black;
+  color: white;
+}
+
 #modal {
   display: none; /* ensures it’s invisible until it’s called */
   overflow: scroll;
@@ -34,20 +81,31 @@
   position: relative;
   float: left;
   width: 45%;
+  margin-left: 35px;
   text-align: center;
-  border: 1px solid black;
+/*  border: 1px solid black;*/
   margin-top: 0px;
-
+  overflow: scroll;
+  height: 750px;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  background: white;
+  opacity: 0.7;
 }
 
 #bar-results {
-position: relative;
-float: right;
-width: 45%;
-text-align: center;
-border: 1px solid black;
-overflow: scroll;
-
+  position: relative;
+  float: right;
+  width: 45%;
+  margin-right: 35px;
+  text-align: center;
+/*  border: 1px solid black;*/
+  overflow: scroll;
+  height: 750px;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  background: white;
+  opacity: 0.5;
 }
 
 .single-view {
