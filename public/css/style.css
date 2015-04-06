@@ -1,9 +1,11 @@
 @import url(http://fonts.googleapis.com/css?family=Poiret+One|Lobster);
 
 body {
+  background: black;
   background-image: url("../images/concert.jpg");
   background-size: 150%;
   background-repeat: no-repeat;
+  z-index: 0;
   font-family: 'Poiret One', cursive;
   color: black;
 }
@@ -14,7 +16,7 @@ h1 {
 
 #eventeaze h1 {
   font-size: 50px;
-  color: white;
+  color: #DEB887;
   margin-left: 45px;
 }
 
@@ -90,7 +92,11 @@ button {
   padding-bottom: 20px;
   margin-bottom: 30px;
   background: white;
-  opacity: 0.7;
+  opacity: 0.75;
+}
+
+#main h1 {
+  z-index: 2;
 }
 
 #bar-results {
@@ -105,11 +111,13 @@ button {
   padding-bottom: 20px;
   margin-bottom: 30px;
   background: white;
-  opacity: 0.5;
+  opacity: 0.75;
 }
 
 .single-view {
-  background-color: slategray;
+  background-color: black;
+  color: white;
+
 }
 
 #bars-nearby {
@@ -125,3 +133,34 @@ button {
   text-align: center;
   margin-left: 18%;
 }
+
+.map {
+  height: 500px;
+  width: 80%;
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

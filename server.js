@@ -60,7 +60,7 @@ app.get("/search_for_events", function (req, res) {
 //route to create event
 app.post("/events", function (req, res) {
   var events = req.body;
-  Event.findAll(events)
+  Event.create(events)
        .then(function(newEntry) {
          res.send(newEntry)
          });
