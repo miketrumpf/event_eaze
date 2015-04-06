@@ -15,7 +15,11 @@ module.exports = function(sequelize, DataTypes) {
 
     classMethods: {
       associate: function(models) {
-        events.hasMany(models.bars, {foreignKey: "event_id"});
+        events.hasMany(models.bars, {
+          foreignKey: "event_id",
+          onDelete: "cascade",
+          hooks: true
+        });
       }
     }
   });
