@@ -60,7 +60,7 @@ app.get("/search_for_events", function (req, res) {
 //route to create event
 app.post("/events", function (req, res) {
   var events = req.body;
-  Event.create(events)
+  Event.findAll(events)
        .then(function(newEntry) {
          res.send(newEntry)
          });
@@ -69,7 +69,7 @@ app.post("/events", function (req, res) {
 
 //route to get list of events
 app.get("/events", function (req, res) {
-  Event.findAll( {order: "id ASC", include: [Bar]} )
+  Event.findAll( {order: 'id ASC', include: [Bar]} )
        .then(function(events) {
         res.send(events)
   });
