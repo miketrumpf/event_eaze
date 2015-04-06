@@ -69,10 +69,7 @@ app.post("/events", function (req, res) {
 
 //route to get list of events
 app.get("/events", function (req, res) {
-
-  //console.log(Event.body);
-
-  Event.findAll()
+  Event.findAll( {include: [Bar]} )
        .then(function(events) {
         res.send(events)
   });
@@ -91,7 +88,10 @@ app.get("/events/:id", function (req, res) {
 
 //route to delete event
 app.delete("/events/:id", function (req, res) {
-  Event.findOne(req.params.id)
+  Event.findOne({
+        where: {id: req.params.id},
+        include: [Bar]
+      })
        .then(function(oneEvent) {
          oneEvent.destroy()
                  .then(function() {
