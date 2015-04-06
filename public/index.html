@@ -10,8 +10,8 @@
   <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.0/handlebars.min.js"></script>
 
+  <script src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
 
-  <!--<script src="bundle.js"></script>-->
   <script src="js/app.js"></script> 
 
   <script src="js/models/bar.js"></script>
@@ -47,7 +47,7 @@
 
   <section id="nav"></section>
 
-  <div class="map"></div>
+<!--   <div id="map"></div> -->
 
  <!--  <section id="saved"></section> -->
   
@@ -116,6 +116,8 @@
       <h1>Name: {{venue.name}}</h1>
       <h2>About: {{tips.0.text}}</h2>
       <h2>Rating: {{venue.rating}}</h2>
+      <input type="hidden" id ="lat" data-lat="{{venue.location.lat}}"></input>
+      <input type="hidden" id ="long" data-long="{{venue.location.lng}}"></input>
     <button id="more-bar-info">More Info</button>   
     <button id="save-bar">Save Bar</button>
     </div>
@@ -145,6 +147,8 @@
       {{/each}}
     </div>
   </template>
+
+  <div class="map"></div>
 
 </body>
 

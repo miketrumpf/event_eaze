@@ -26,6 +26,12 @@ module.exports = {
       cityAddress: {
         type: DataTypes.STRING
       },
+      latitude: {
+        type: DataTypes.STRING
+      },
+      longitude: {
+        type: DataTypes.STRING
+      },
       event_id: {
         type: DataTypes.INTEGER
       }

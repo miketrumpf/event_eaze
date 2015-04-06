@@ -7,6 +7,8 @@ module.exports = function(sequelize, DataTypes) {
     hours: DataTypes.STRING,
     streetAddress: DataTypes.STRING,
     cityAddress: DataTypes.STRING,
+    latitude: DataTypes.STRING,
+    longitude: DataTypes.STRING,
     event_id: DataTypes.INTEGER
   }, {
 

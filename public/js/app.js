@@ -27,6 +27,8 @@ $(function() {
   // App.mapView = new App.Views.MapView();
   // App.mapView.initialize();
 
+  //App.mapView = new App.Views.MapView;
+
   //google.maps.event.addDomListener(window, "load", initialize);
 
 });
