@@ -25,9 +25,13 @@ App.Views.Event = Backbone.View.extend({
   events: {
     "click #more-info": "getFullEventInfo",
     "click #save-event": "callSaveEvent",
-    "click .less-info": "getLessEventInfo"
+    "click .less-info": "getLessEventInfo",
+    // "click #save-event": "slideDown",
   },
-
+  
+  // slideDown: function(){
+  //   
+  // },
 
 
 //   seachForBars: function() {
@@ -74,6 +78,8 @@ App.Views.Event = Backbone.View.extend({
       App.bars.fetch();
     });
 
+    
+
     console.log(this.model.id);
 
 
@@ -83,6 +89,7 @@ App.Views.Event = Backbone.View.extend({
     console.log("clicked") 
     var newEventModalView = new App.Views.EventModal({model: this.model})
 
+
   },
 
   getLessEventInfo: function() {
@@ -91,6 +98,7 @@ App.Views.Event = Backbone.View.extend({
     var data = this.model.toJSON();
     var compiledTemplate = this.eventTemplate(data);
     this.$el.append(compiledTemplate);
+    // this.$el.slideUp();
 
   },
 

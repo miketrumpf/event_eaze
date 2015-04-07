@@ -10,6 +10,7 @@ App.Collections.Events = Backbone.Collection.extend({
       return "/search_for_events?" + "&location=" + city + "&date=" + date + "&keywords=" + keyword
     },
   
-  model: App.Models.Event
+  model: App.Models.Event,
+  
 
 });

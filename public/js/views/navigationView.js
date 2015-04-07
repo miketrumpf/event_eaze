@@ -28,6 +28,7 @@ App.Views.Navigation = Backbone.View.extend({
     //App.myEvents.fetch();
     // var viewAll = new App.Views.MyEventView();
     // viewAll.render();
+    console.log("click")
     App.myEvents.fetch();
     //App.myEventsView.renderAll();
 
