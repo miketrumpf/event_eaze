@@ -6,9 +6,13 @@ Not only will you be able to search for events, but also for local restaurants a
 Save these events to our database to revisit them anytime you want!!
 
 Directions
+
 1. To start this process please select a city.  Any City! As long as it exists on earth and has some kind of social scene!
+
 2. Put in a timeframe!  You can search for times like Today, this week, this month, all, and future!
+
 3.  If you know what kind of event you are looking for, please feel free to put in a keyword!  Keywords can be as general as music to something as descriptive as knitting!
+
 4.  Take a moment to bask in the glory of these custom search results courtesy of the Eventful API.  
 5. Feel free to click more info to see a more detailed description of the event.  Watch out for html tags tho!  When you get your fill of the description click close to hide the modal view.
 6. Once you see an event that you would like to attend click the save event and show bars button!
