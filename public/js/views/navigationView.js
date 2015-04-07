@@ -25,7 +25,10 @@ App.Views.Navigation = Backbone.View.extend({
   },
 
   seeMyEvents: function() {
-    App.mapView = new App.Views.MapView;
+    //App.mapView = new App.Views.MapView;
+
+    App.mapView = new App.Views.MapView({ collection: App.myEvents });
+    
 
     // App.latlong = new App.Views.mapsView;
     // latlong.initialize();
