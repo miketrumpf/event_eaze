@@ -5,7 +5,6 @@ App.Views.Bars = Backbone.View.extend({
   initialize: function() {
     this.listenTo(this.collection, "reset", this.renderAll);
     this.listenTo(this.collection, "add", this.renderAll);
-    // this.renderAll();
   },
 
   renderAll: function() {
@@ -14,7 +13,6 @@ App.Views.Bars = Backbone.View.extend({
   },
 
   renderOne: function(one) {
-    // console.log(one);
     var newBarView = new App.Views.Bar ({ model: one });
     this.$el.append(newBarView.el);
   }

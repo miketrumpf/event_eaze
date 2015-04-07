@@ -22,8 +22,6 @@ App.Views.MapView = Backbone.View.extend({
         map: this.map,
         position: {lat: parseFloat(this.model.latitude), lng: parseFloat(this.model.longitude)},
         animation: google.maps.Animation.DROP,
-        // icon: "http://maps.google.com/mapfiles/ms/icons/red-dot.png"
-        // content: this.model.title
       });
 
       var infoWindow = new google.maps.InfoWindow({

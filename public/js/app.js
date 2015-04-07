@@ -20,7 +20,6 @@ $(function() {
   // App.bars.fetch(); 
 
   App.myEvents = new App.Collections.MyEvents;
-  App.myEventsView = new App.Views.MyEventsView({ collection: App.myEvents });
   App.myEvents.fetch();
 
   App.listEvents = new App.Collections.MyEvents;

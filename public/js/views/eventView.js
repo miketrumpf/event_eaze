@@ -4,11 +4,8 @@ App.Views.Event = Backbone.View.extend({
 
   initialize: function() {
     //console.log("New Event view created")
-    // this.listenTo(this.model, "change", this.render);
-
     this.eventTemplate = Handlebars.compile($("#event-list").html());
     this.singleEventTemplate= Handlebars.compile($("#single-event").html());
-    // $("#main").on("click", ".event", this.getFullEventInfo(this))
     this.render();
 
 
@@ -25,31 +22,9 @@ App.Views.Event = Backbone.View.extend({
   events: {
     "click #more-info": "getFullEventInfo",
     "click #save-event": "callSaveEvent",
-    "click .less-info": "getLessEventInfo",
-    // "click #save-event": "slideDown",
+    "click .less-info": "getLessEventInfo"
   },
   
-  // slideDown: function(){
-  //   
-  // },
-
-
-//   seachForBars: function() {
-//     this.$el.empty();
-//     var data = this.model.toJSON()
-//     var compiledTemplate = this.singleEventTemplate(data);
-//     this.$el.html(compiledTemplate)
-// // debugger
-//     var longitude = this.model.attributes.longitude;
-//     var latitude = this.model.attributes.latitude;
-//     var longLat = (latitude + "," + longitude);
-
-//     console.log(longLat);
-
-//     App.bars.url = "/search_for_bars?&ll=" +longLat;
-//     App.bars.fetch();
-
-//   },
 
   callSaveEvent: function() {
 
@@ -62,12 +37,10 @@ App.Views.Event = Backbone.View.extend({
     var data = this.model.toJSON()
     var compiledTemplate = this.singleEventTemplate(data);
     this.$el.html(compiledTemplate)
-// debugger
     var longitude = this.model.attributes.longitude;
     var latitude = this.model.attributes.latitude;
     var longLat = (latitude + "," + longitude);
 
-    console.log(longLat);
 
     App.bars.url = "/search_for_bars?&ll=" +longLat;
     App.bars.fetch();
@@ -78,17 +51,11 @@ App.Views.Event = Backbone.View.extend({
       App.bars.fetch();
     });
 
-    
-
-    console.log(this.model.id);
-
-
   },
 
   getFullEventInfo: function() {
     console.log("clicked") 
     var newEventModalView = new App.Views.EventModal({model: this.model})
-
 
   },
 
@@ -98,7 +65,6 @@ App.Views.Event = Backbone.View.extend({
     var data = this.model.toJSON();
     var compiledTemplate = this.eventTemplate(data);
     this.$el.append(compiledTemplate);
-    // this.$el.slideUp();
 
   },
 

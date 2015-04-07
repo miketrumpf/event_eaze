@@ -5,7 +5,6 @@ App.Views.ListEventsView = Backbone.View.extend({
   initialize: function() {
     this.listenTo(this.collection, "reset", this.renderAll);
     this.listenTo(this.collection, "add", this.renderAll);
-    //this.renderAll();
   },
 
   renderAll: function() {
@@ -14,7 +13,6 @@ App.Views.ListEventsView = Backbone.View.extend({
   },
 
   renderOne: function(one) {
-    //console.log(one.attributes.latitude);
     var newListEventView = new App.Views.ListEventView({ model: one });
     this.$el.append(newListEventView.el);
   }
