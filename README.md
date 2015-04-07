@@ -16,7 +16,7 @@ Directions
 7. Viola! A list of great bars near your events venue!  How convenient!
 8. Scroll through the list of bars to find one that fits your taste.  Maybe multiple bars do!?  Feel free to save as many bars to your event as you would like.
 9.  Congratulations!  You have succesfully planned a night out.  
-10  To see the history of your saved events click the show saved events button.  A list of all your events will populate the left side of the screen.
+10.  To see the history of your saved events click the show saved events button.  A list of all your events will populate the left side of the screen.
 11. Click the map it button to view the bars in relation to your event right in google maps!  
 12. We hope our app helps you discover some great events and plan some fun nights out with friends!
 
