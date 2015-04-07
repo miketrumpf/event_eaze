@@ -114,7 +114,7 @@ app.get("/search_for_bars", function (req, res) {
      qs: { 
       //ll: "40.7,-74",
       ll: llToSearch,
-      section: "food",
+      section: "drinks",
       client_id:"BNAPSUX5Q2VGUM2JOAQGHXHGCK5WGGHWQPF2VWKZJG5XLKUL",
       client_secret:"F4OSS11HXEOPZP41WPYYXDSV2NHR2BYZGZWNX44OJ3PEBLZ0",
       v: "20150401"
