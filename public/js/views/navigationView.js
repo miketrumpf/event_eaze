@@ -21,6 +21,7 @@ App.Views.Navigation = Backbone.View.extend({
   },
 
   searchForEvents: function() {
+    $("#bar-results").empty();
     App.events.fetch();
   },
 
