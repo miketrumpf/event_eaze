@@ -9,7 +9,6 @@ var models      = require("./models");
 //Models 
 var Event = models.events;
 var Bar = models.bars;
-//var Plan = models.plans; -> Join Table
 
 //Express 
 var app = express();
@@ -22,24 +21,12 @@ app.use(logger("dev"));
 app.use(bodyParser());
 app.use(express.static(__dirname + "/public"));
 
-//Routes
-//----
-
-// app.get("/show_map", function (req, res) {
-//   var query = req.query;
-
-//   request({ })
-// })
 
 //EVENTFUL ROUTES
 
 //Get Events by City, Date, and Keyword.
-
-//Route made before index has been created.  Need to add var params later.
 app.get("/search_for_events", function (req, res) {
-  // var cityParams = req[0].query;
-  // var timeParams = req[1].query;
-  // var keywordParams = req[2].query;
+
   var query = req.query;
   query.app_key = "MMVmB6tzJdSHNQR6";
 
@@ -48,13 +35,9 @@ app.get("/search_for_events", function (req, res) {
     method: "GET",
     json: true,
     qs: query
-      // location: "New York",
-      // date: "Future",
-      // keywords: "Rap"
   }, function(error, response, body) {
     
     res.send(body.events.event)
-    //console.log(body.events.event);
 });
 
 //route to create event
@@ -105,7 +88,6 @@ app.delete("/events/:id", function (req, res) {
 //Get restaurants by Show Objects Latitude plus Longitude.  (ll parameter)
 
 app.get("/search_for_bars", function (req, res) {
-  // var latLong = this.venue.lat + ", " + this.venue.long
   var llToSearch = req.query['ll'];
   request({
     uri: "https://api.foursquare.com/v2/venues/explore",
@@ -123,14 +105,13 @@ app.get("/search_for_bars", function (req, res) {
     var arrayOfBars = [];
    for (var i =0; i < 10; i++) {
     var currentVenue = body.response.groups[0].items[i];
-    //console.log(currentVenue)
     arrayOfBars.push(currentVenue)
     
    } 
       res.send(arrayOfBars)
 
   })
-  //console.log(request)
+
 });
 
 //route to save bar
@@ -174,52 +155,8 @@ app.get("/bars/:id", function (req, res) {
   });
 });
 
-//route to delete bar
-app.delete("/bars/:id", function (req, res) {
-  Bar
-  .findOne(req.params.id)
-  .then(function(bar) {
-    bar
-      .destroy()
-      .then(function() {
-        res.send(bar);
-      });
-  });
-});
 
-//----------------
-//Events <-> Bars
-//----------------
 
-// app.put("/events/:id/add_bar", function (req, res) {
-
-//   var eventId = req.params.id;
-//   var barId = req.body.bar_id;
-
-//   Event.findOne(eventId)
-//        .then(function(events) {
-//          Bar.findOne(barId)
-//             .then(function(bar) {
-//               post.addBar(bar);
-//               res.send("Linked!");
-//             });
-//        });
-// });
-
-// app.put("/events/:id/remove_bar", function (req, res) {
-
-//   var eventId = req.params.id;
-//   var barId = req.body.bar_id;
-
-//   Event.findOne(eventId)
-//        .then(function(events) {
-//          Bar.findOne(barId)
-//             .then(function(bar) {
-//               post.removeBar(bar);
-//               res.send("Yay");
-//             });
-//        });
-// });
 
 //Server
 app.listen( process.env.PORT || 3000, function() {

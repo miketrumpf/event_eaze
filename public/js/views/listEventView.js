@@ -2,8 +2,6 @@ App.Views.ListEventView = Backbone.View.extend({
   
   initialize: function() {
     this.myTemplate = Handlebars.compile($("#my-events-template").html());
-    // this.listenTo(this.model, "reset", this.render);
-    // this.listenTo(this.model, "add", this.render);
     this.render();
   },
 
@@ -13,14 +11,18 @@ App.Views.ListEventView = Backbone.View.extend({
   },
 
   events: {
-    "click #bar-map": "showMap"
+    "click #bar-map": "showMap",
+    "click #delete": "deleteEvent"
   },
 
   showMap: function() {
     console.log("showMap clicked")
-    debugger
     var model = this.model.attributes
     var newMap = new App.Views.MapView({model: model})
-  }
+  },
+
+  deleteEvent: function() {
+    this.model.destroy(this.model.id);
+    }
 
 });

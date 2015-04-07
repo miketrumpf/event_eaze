@@ -15,7 +15,6 @@
   <script src="js/app.js"></script> 
 
   <script src="js/models/map.js"></script>
-  <script src="js/collections/maps.js"></script>
   <script src="js/views/mapView.js"></script>
 
   <script src="js/models/bar.js"></script>
@@ -34,9 +33,6 @@
   <script src="js/views/eventsView.js"></script>
   <script src="js/views/eventModalView.js"></script>
 
-  <script src="js/views/myEventView.js"></script>
-  <script src="js/views/myEventsView.js"></script>
-
   <script src="js/views/listEventView.js"></script>
   <script src="js/views/listEventsView.js"></script>  
 
@@ -52,10 +48,6 @@
   </div>
 
   <section id="nav"></section>
-
-<!--   <div id="map"></div> -->
-
- <!--  <section id="saved"></section> -->
   
   <h1 id="events-nearby">Events!</h1>
   <h1 id="bars-nearby">Nearby Bars!</h1>
@@ -148,11 +140,10 @@
       <h2>Event: {{title}}</h2>
       <p>Start: {{start_time}}</p>
       <button id="bar-map">Map it!</button>
+      <button id="delete">Delete Event</button>
     </div>
   </template>
 
-<!--   <div class="map"></div>
- -->
 
 </body>
 
