@@ -6,7 +6,7 @@ App.Views.ListEventView = Backbone.View.extend({
   },
 
   render: function() {
-    console.log("Render Single View");  
+    console.log("Render Single View"); 
     this.$el.html( this.myTemplate(this.model.toJSON() ));
   },
 
