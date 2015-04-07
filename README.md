@@ -16,7 +16,7 @@ Directions
 4.  Take a moment to bask in the glory of these custom search results courtesy of the Eventful API.  
 5. Feel free to click more info to see a more detailed description of the event.  Watch out for html tags tho!  When you get your fill of the description click close to hide the modal view.
 6. Once you see an event that you would like to attend click the save event and show bars button!
-7. Viola! A list of great bars near your events venue! Brought to you by FoursSquare.  How convenient!
+7. Viola! A list of great bars near your events venue! Brought to you by Foursquare.  How convenient!
 8. Scroll through the list of bars to find one that fits your taste.  Maybe multiple bars do!?  Feel free to save as many bars to your event as you would like.
 9.  Congratulations!  You have succesfully planned a night out.  
 10.  To see the history of your saved events click the show saved events button.  A list of all your events will populate the left side of the screen.
