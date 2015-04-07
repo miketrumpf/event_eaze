@@ -7,9 +7,9 @@ var basename  = path.basename(module.filename);
 var env       = process.env.NODE_ENV || "development";
 var config    = require(__dirname + '/../config/config.json')[env];
 
-if (process.env.HEROKU_POSTGRESQL_GOLD_URL) {
+if (process.env.HEROKU_POSTGRESQL_BLUE_URL) {
     // the application is executed on Heroku ... use the postgres database
-    sequelize = new Sequelize(process.env.HEROKU_POSTGRESQL_GOLD_URL, {
+    sequelize = new Sequelize(process.env.HEROKU_POSTGRESQL_BLUE_URL, {
       dialect:  'postgres',
       protocol: 'postgres',
       logging:  true //false
