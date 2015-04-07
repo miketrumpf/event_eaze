@@ -1,3 +1,93 @@
+@import url(http://fonts.googleapis.com/css?family=Poiret+One|Lobster);
+
+body {
+  background: black;
+  background-image: url("../images/concert.jpg");
+  background-size: 150%;
+  background-repeat: no-repeat;
+  z-index: 0;
+  font-family: 'Poiret One', cursive;
+  color: black;
+}
+
+h1 {
+  font-family: 'Lobster', cursive;
+}
+
+#eventeaze h1 {
+  font-size: 50px;
+  color: #DEB887;
+  margin-left: 45px;
+}
+
+#home {
+  margin-left: 400px;
+/*  display: block;
+  position: center;
+  margin-right: auto;
+  margin-left: auto;*/
+  margin-bottom: 50px;
+}
+
+input {
+  border: none;
+  border-radius: 2px;
+  font-size: 16px;
+  padding: 2px 2px 2px 2px;
+  background-color: grey;
+  color: white;
+  font-family: 'Poiret One', cursive;
+  outline: none;
+}
+
+input:focus {
+  outline:none;
+  border: 1px solid #DEB887; 
+  box-shadow: 0px 0px 14px #DEB887; 
+  -moz-box-shadow: 0px 0px 14px #DEB887;
+  -webkit-box-shadow: 0px 0px 14px #DEB887;
+}
+
+#select {
+  font-size: 20px;
+  margin-top: 10px;
+  float: center;
+  border: none;
+  background-color: black;
+  color: white;
+  font-family: 'Poiret One', cursive;  
+  margin-left: 115px;
+}
+
+#my-events {
+  font-size: 20px;
+  margin-top: 10px;
+  float: center;
+  border: none;
+  background-color: black;
+  color: white;
+  font-family: 'Poiret One', cursive; 
+}
+
+#select:hover {
+  border: none;
+  background-color: #DEB887;
+  color: #FFF; 
+  -webkit-transition: color .25s linear, background-color .25s ease-in-out, border-color .25s ease-in-out;
+  -moz-transition: color .25s linear, background-color .25s ease-in-out, border-color .25s ease-in-out;
+  -o-transition: color .25s linear, background-color .25s ease-in-out, border-color .25s ease-in-out;
+  transition: color .25s linear, background-color .25s ease-in-out, border-color .25s ease-in-out;
+}
+
+#my-events:hover {
+  background-color: #DEB887;
+  color: #FFF; 
+  -webkit-transition: color .25s linear, background-color .25s ease-in-out, border-color .25s ease-in-out;
+  -moz-transition: color .25s linear, background-color .25s ease-in-out, border-color .25s ease-in-out;
+  -o-transition: color .25s linear, background-color .25s ease-in-out, border-color .25s ease-in-out;
+  transition: color .25s linear, background-color .25s ease-in-out, border-color .25s ease-in-out;
+}
+
 #modal {
   display: none; /* ensures it’s invisible until it’s called */
   overflow: scroll;
@@ -34,24 +124,55 @@
   position: relative;
   float: left;
   width: 45%;
+  margin-left: 35px;
   text-align: center;
-  border: 1px solid black;
+/*  border: 1px solid black;*/
   margin-top: 0px;
+  overflow: scroll;
+  height: 750px;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  background: white;
+  opacity: 0.75;
+  transition: opacity .5s ease-in-out;
+  -moz-transition: opacity .5s ease-in-out;
+  -webkit-transition: opacity .5s ease-in-out;
+}
 
+#main:hover{
+  opacity: 1;
+}
+
+#main h1 {
+  z-index: 2;
 }
 
 #bar-results {
-position: relative;
-float: right;
-width: 45%;
-text-align: center;
-border: 1px solid black;
-overflow: scroll;
+  position: relative;
+  float: right;
+  width: 45%;
+  margin-right: 35px;
+  text-align: center;
+/*  border: 1px solid black;*/
+  overflow: scroll;
+  height: 750px;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+  background: white;
+  opacity: 0.75;
+  transition: opacity .5s ease-in-out;
+  -moz-transition: opacity .5s ease-in-out;
+  -webkit-transition: opacity .5s ease-in-out;
+}
 
+#bar-results:hover{
+  opacity: 1;
 }
 
 .single-view {
-  background-color: slategray;
+  background-color: black;
+  color: white;
+
 }
 
 #bars-nearby {
@@ -65,5 +186,36 @@ overflow: scroll;
   position: relative;
   float: left;
   text-align: center;
-  margin-left: 18%;
+  margin-left: 21%;
 }
+
+.map {
+  height: 500px;
+  width: 80%;
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

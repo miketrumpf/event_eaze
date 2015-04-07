@@ -24,15 +24,5 @@ $(function() {
   App.myEvents.fetch();
 
 
-  // App.map = new App.Models.Map;
-  // App.maps = new App.Collections.Maps;
-  // App.mapView = new App.Views.MapView({collection: App.maps});
-
-
-  //App.map = new App.Collections.MyEvents;
-  //App.mapView = new App.Views.MapView();
-  //App.mapView.initialize();
-
-  //google.maps.event.addDomListener(window, "load", initialize);
 
 });

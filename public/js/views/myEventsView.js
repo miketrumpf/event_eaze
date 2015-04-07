@@ -8,9 +8,6 @@ App.Views.MyEventsView = Backbone.View.extend({
   },
 
   renderAll: function() {
-    $("#main").empty();
-    $("#bar-results").empty();
-    // console.log("render All");
     this.$el.empty();
     this.collection.each(this.renderOne, this);
   },

@@ -9,10 +9,9 @@
   <script type="text/javascript" src="http://underscorejs.org/underscore-min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.0/handlebars.min.js"></script>
+
   <script src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
 
-  <!--<script src="bundle.js"></script>-->
- 
   <script src="js/app.js"></script> 
 
 <!--   // <script src="js/models/map.js"></script>
@@ -44,22 +43,23 @@
 
 <body>
   
-  <div><h1>EventEaze</h1></div>
-  <div class="map"></div>
+
+  <div id="eventeaze">
+    <h1>EventEaze</h1>
+  </div>
+
   <section id="nav"></section>
 
-  <section id="saved"></section>
+<!--   <div id="map"></div> -->
+
+ <!--  <section id="saved"></section> -->
   
   <h1 id="events-nearby">Events!</h1>
   <h1 id="bars-nearby">Nearby Bars!</h1>
 
-  <section id="main">
-<!--     <h1>Events!</h1> -->
-  </section>
+  <section id="main"></section>
   
-  <section id="bar-results">
-<!--     <h1>Bars Nearby!</h1> -->
-  </section>
+  <section id="bar-results"></section>
 
   <section id="modal"></section>
 
@@ -68,8 +68,9 @@
       <input type="text" id="city" placeholder="City Name"></input>
       <input type="text" id="date" placeholder="Date"></input>
       <input type="text" id="keyword" placeholder="Keyword"></input>
-    <button id="select">SHOW EVENTS</button>
-    <button id="my-events">My saved events</button>
+      <br>
+      <button id="select">Show Events</button>
+      <button id="my-events">Saved Events</button>
     </div>
   </template>
 
@@ -108,7 +109,7 @@
       <p>Venue Name: {{venue_name}}</p>
       <p>Street Address: {{venue_address}}</p>
       <p>Description: {{description}}</p>
-      <span class="less-info">Less Info</span>
+      <button class="less-info">LESS INFO</button>
     </div>
   </template>
 
@@ -118,6 +119,8 @@
       <h1>Name: {{venue.name}}</h1>
       <h2>About: {{tips.0.text}}</h2>
       <h2>Rating: {{venue.rating}}</h2>
+      <input type="hidden" id ="lat" data-lat="{{venue.location.lat}}"></input>
+      <input type="hidden" id ="long" data-long="{{venue.location.lng}}"></input>
     <button id="more-bar-info">More Info</button>   
     <button id="save-bar">Save Bar</button>
     </div>
@@ -148,11 +151,7 @@
     </div>
   </template>
 
-
-<!-- Google Maps -->
-
-
-<!-- <div id="map" style="width:500px;height:380px;"></div> -->
+  <div class="map"></div>
 
 
 </body>

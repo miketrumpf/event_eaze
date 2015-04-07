@@ -32,15 +32,20 @@ App.Views.Bar = Backbone.View.extend({
     // var teste = new App.Collections.MyEvents({model: model});
     // var lastId = teste.last().id;
     // debugger
+    
+    //App.myEvents.fetch();
     var lastId = App.myEvents.last().id;
-    console.log(lastId);
+    var lastIdPlus = lastId + 1;
+    console.log(lastIdPlus);
 
     var bars = this.model.attributes;
 
-    var barsModel = ({name: bars.venue.name, rating: bars.venue.rating, text: bars.tips[0].text, hours: bars.venue.hours.status, streetAddress: bars.venue.location.address, cityAddress: bars.venue.location.city, event_id: lastId}); //event ID!
+    var barsModel = ({name: bars.venue.name, rating: bars.venue.rating, text: bars.tips[0].text, hours: bars.venue.hours.status, streetAddress: bars.venue.location.address, cityAddress: bars.venue.location.city, latitude: bars.venue.location.lat, longitude: bars.venue.location.lng, event_id: lastIdPlus }); //event ID!
 
     App.bars = new App.Models.Bar;
     App.bars.save(barsModel);
+
+    //App.myEvents.fetch();
   }
 
 }); 

@@ -69,7 +69,7 @@ app.post("/events", function (req, res) {
 
 //route to get list of events
 app.get("/events", function (req, res) {
-  Event.findAll( {include: [Bar]} )
+  Event.findAll( {order: 'id ASC', include: [Bar]} )
        .then(function(events) {
         res.send(events)
   });

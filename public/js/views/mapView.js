@@ -1,4 +1,4 @@
-App.Views.MapView = Backbone.View.extend ({
+App.Views.MapView = Backbone.View.extend({
 
     el: '.map',
     
