@@ -3,6 +3,7 @@ App.Views.Event = Backbone.View.extend({
 
 
   initialize: function() {
+
     this.eventTemplate = Handlebars.compile($("#event-list").html());
     this.singleEventTemplate= Handlebars.compile($("#single-event").html());
     this.render();
@@ -19,8 +20,7 @@ App.Views.Event = Backbone.View.extend({
   events: {
     "click #more-info": "getFullEventInfo",
     "click #save-event": "callSaveEvent",
-    "click .less-info": "getLessEventInfo",
-    // "click #save-event": "slideDown",
+    "click .less-info": "getLessEventInfo"
   },
 
   callSaveEvent: function() {
@@ -39,7 +39,6 @@ App.Views.Event = Backbone.View.extend({
     var latitude = this.model.get('latitude');
     var longLat = (latitude + "," + longitude);
 
-    //console.log(longLat);
 
     App.bars.url = "/search_for_bars?&ll=" +longLat;
     App.bars.fetch();
@@ -55,6 +54,7 @@ App.Views.Event = Backbone.View.extend({
   getFullEventInfo: function() {
     console.log("clicked") 
     var newEventModalView = new App.Views.EventModal({model: this.model})
+
   },
 
   getLessEventInfo: function() {
@@ -63,7 +63,6 @@ App.Views.Event = Backbone.View.extend({
     var data = this.model.toJSON();
     var compiledTemplate = this.eventTemplate(data);
     this.$el.append(compiledTemplate);
-    // this.$el.slideUp();
 
   },
 

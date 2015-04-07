@@ -4,7 +4,6 @@ App.Collections.MyEvents = Backbone.Collection.extend({
   model: App.Models.Event,
   
   initialize: function() {
-    //console.log("my events Collection");
   }
 
 });

@@ -28,6 +28,7 @@ App.Views.Navigation = Backbone.View.extend({
       "background-color": "white"
     });       
     $("#bar-results").empty(); 
+
     App.events.fetch();
   },
 

@@ -25,19 +25,21 @@ App.Views.Bar = Backbone.View.extend({
   },
 
   saveBar: function(model) {
+
     var lastId = App.myEvents.last().id;
     var lastIdPlus = lastId + 1;
     console.log(lastIdPlus);
 
     var bars = this.model.toJSON();
 
-    var barsModel = ({name: bars.venue.name, rating: bars.venue.rating, text: bars.tips[0].text, hours: bars.venue.hours.status, streetAddress: bars.venue.location.address, cityAddress: bars.venue.location.city, latitude: bars.venue.location.lat, longitude: bars.venue.location.lng, event_id: lastIdPlus }); //event ID!
+    var barsModel = ({name: bars.venue.name, rating: bars.venue.rating, text: bars.tips[0].text, hours: bars.venue.hours.status, streetAddress: bars.venue.location.address, cityAddress: bars.venue.location.city, latitude: bars.venue.location.lat, longitude: bars.venue.location.lng, event_id: lastIdPlus }); 
 
     App.bars = new App.Models.Bar;
     App.bars.save(barsModel);
 
     alert("Bar saved! :-)");
     //App.myEvents.fetch();
+
   }
 
 }); 
