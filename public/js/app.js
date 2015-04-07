@@ -23,6 +23,8 @@ $(function() {
   App.myEventsView = new App.Views.MyEventsView({ collection: App.myEvents });
   App.myEvents.fetch();
 
-
+  App.listEvents = new App.Collections.MyEvents;
+  App.listEventsView = new App.Views.ListEventsView({ collection: App.listEvents });
+  //App.listEvents.fetch();
 
 });

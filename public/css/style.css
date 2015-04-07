@@ -2,7 +2,7 @@
 
 body {
   background: black;
-  background-image: url("../images/concert.jpg");
+  background-image: url("../images/footer_lodyas.png");
   background-size: 150%;
   background-repeat: no-repeat;
   z-index: 0;
@@ -188,7 +188,7 @@ input:focus {
   text-align: center;
   margin-left: 21%;
 }
-
+/*
 .map {
   height: 500px;
   width: 80%;
@@ -198,7 +198,7 @@ input:focus {
   margin-right: auto;
   margin-bottom: 30px;
 }
-
+*/
 
 
 

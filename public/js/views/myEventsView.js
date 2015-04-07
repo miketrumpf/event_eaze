@@ -1,10 +1,11 @@
 App.Views.MyEventsView = Backbone.View.extend({  
-  el: "#saved",
+  
+  el: "#main",
 
   initialize: function() {
-    this.listenTo(this.collection, "reset", this.renderAll);
-    this.listenTo(this.collection, "add", this.renderOne);
-    //this.renderAll();
+    // this.listenTo(this.collection, "reset", this.renderAll);
+    // this.listenTo(this.collection, "add", this.renderOne);
+    // this.renderAll();
   },
 
   renderAll: function() {

@@ -37,6 +37,9 @@
   <script src="js/views/myEventView.js"></script>
   <script src="js/views/myEventsView.js"></script>
 
+  <script src="js/views/listEventView.js"></script>
+  <script src="js/views/listEventsView.js"></script>  
+
   <script src="js/views/navigationView.js"></script>
 
 </head>
@@ -69,8 +72,8 @@
       <input type="text" id="date" placeholder="Date"></input>
       <input type="text" id="keyword" placeholder="Keyword"></input>
       <br>
-      <button id="select">Show Events</button>
-      <button id="my-events">Saved Events</button>
+      <button id="select">Search Events</button>
+      <button id="my-events">ShowSaved Events</button>
     </div>
   </template>
 
@@ -144,15 +147,12 @@
     <div id="my-events">
       <h2>Event: {{title}}</h2>
       <p>Start: {{start_time}}</p>
-      {{#each bars}}
-        <p>{{this.name}}</p>
-        <p>{{this.text}}</p>
-      {{/each}}
+      <button id="bar-map">Map it!</button>
     </div>
   </template>
 
-  <div class="map"></div>
-
+<!--   <div class="map"></div>
+ -->
 
 </body>
 
