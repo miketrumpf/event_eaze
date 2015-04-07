@@ -65,7 +65,7 @@
       <input type="text" id="keyword" placeholder="Keyword"></input>
       <br>
       <button id="select">Search Events</button>
-      <button id="my-events">ShowSaved Events</button>
+      <button id="my-events">Show Saved Events</button>
     </div>
   </template>
 
@@ -78,6 +78,7 @@
       <input type="hidden" id ="long" data-long="{{longitude}}"></input>
     <button id="more-info">More Info</button>  
     <button id="save-event">Save Event & Show Bars</button>
+    <hr>
     </div>
   </template>
 
@@ -104,7 +105,7 @@
       <p>Venue Name: {{venue_name}}</p>
       <p>Street Address: {{venue_address}}</p>
       <p>Description: {{description}}</p>
-      <button class="less-info">LESS INFO</button>
+      <button class="less-info">Less Info</button>
     </div>
   </template>
 
@@ -118,6 +119,7 @@
       <input type="hidden" id ="long" data-long="{{venue.location.lng}}"></input>
     <button id="more-bar-info">More Info</button>   
     <button id="save-bar">Save Bar</button>
+    <hr>
     </div>
   </template>  
 
@@ -136,11 +138,13 @@
 
 <!-- my_events View -->
   <template id="my-events-template">
-    <div id="my-events">
+    <div id="my-saved-events">
       <h2>Event: {{title}}</h2>
       <p>Start: {{start_time}}</p>
       <button id="bar-map">Map it!</button>
-      <button id="delete">Delete Event</button>
+
+      <hr>
+
     </div>
   </template>
 

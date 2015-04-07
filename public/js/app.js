@@ -1,8 +1,7 @@
 var App = {
   Models: {},
   Collections: {},
-  Views: {},
-  Routers: {}
+  Views: {}
 };
 
 $(function() {

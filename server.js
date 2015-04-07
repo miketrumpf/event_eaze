@@ -156,8 +156,6 @@ app.get("/bars/:id", function (req, res) {
 });
 
 
-
-
 //Server
 app.listen( process.env.PORT || 3000, function() {
   console.log("Running!");
