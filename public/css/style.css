@@ -1,32 +1,33 @@
 @import url(http://fonts.googleapis.com/css?family=Poiret+One|Lobster);
+@import url(http://fonts.googleapis.com/css?family=Monofett|Amatic+SC);
 
 body {
   background: black;
-  background-image: url("../images/footer_lodyas.png");
-  background-size: 150%;
-  background-repeat: no-repeat;
+  background-image: url("../images/brickwall.png");
+/*  background-size: 100%;
+  background-repeat: no-repeat;*/
   z-index: 0;
   font-family: 'Poiret One', cursive;
   color: black;
 }
 
 h1 {
-  font-family: 'Lobster', cursive;
+  font-family: 'Amatic SC', cursive;
 }
 
 #eventeaze h1 {
   font-size: 50px;
   color: #DEB887;
   margin-left: 45px;
+  font-family: 'Monofett', cursive;
 }
 
 #home {
-  margin-left: 400px;
-/*  display: block;
-  position: center;
+  display: block;
+  max-width: 38%;
+  margin-left: auto;
   margin-right: auto;
-  margin-left: auto;*/
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 input {
@@ -48,6 +49,14 @@ input:focus {
   -webkit-box-shadow: 0px 0px 14px #DEB887;
 }
 
+button:active { 
+  outline: none; 
+}
+
+button:focus { 
+  outline: none; 
+}
+
 #select {
   font-size: 20px;
   margin-top: 10px;
@@ -56,7 +65,7 @@ input:focus {
   background-color: black;
   color: white;
   font-family: 'Poiret One', cursive;  
-  margin-left: 115px;
+  margin-left: 95px;
 }
 
 #my-events {
@@ -89,21 +98,18 @@ input:focus {
 }
 
 #modal {
-  display: none; /* ensures it’s invisible until it’s called */
-  overflow: scroll;
-  position: fixed; /* makes the div go into a position that’s absolute to the browser viewing area */
-  left: 25%; /* positions the div half way horizontally */
+  display: none; 
+  position: fixed;
+  left: 25%; 
   top: 20px;
-  padding: 25px;
-  padding-bottom: 50px;
-  border: 1px solid white;
-  background-color: slategray;
-  width: 50%;
-  z-index: 100; /* makes the div the top layer, so it’ll lay on top of the other content */
-}
-
-#modal img {
+  margin-top: 60px;
+  padding: 30px 30px;
+  border-radius: 10px;
+  background-color: #DEB887;
   height: 300px;
+  overflow: scroll; 
+  width: 50%;
+  z-index: 100; 
 }
 
 .close-modal {
@@ -123,13 +129,16 @@ input:focus {
 #main {
   position: relative;
   float: left;
-  width: 45%;
+  width: 42%;
   margin-left: 35px;
   text-align: center;
 /*  border: 1px solid black;*/
+  border-radius: 10px;
   margin-top: 0px;
   overflow: scroll;
-  height: 750px;
+  height: 550px;
+  padding-left: 20px;
+  padding-right: 20px;
   padding-bottom: 20px;
   margin-bottom: 30px;
   background: white;
@@ -150,12 +159,15 @@ input:focus {
 #bar-results {
   position: relative;
   float: right;
-  width: 45%;
+  width: 42%;
   margin-right: 35px;
   text-align: center;
 /*  border: 1px solid black;*/
+  border-radius: 10px;
   overflow: scroll;
-  height: 750px;
+  height: 550px;
+  padding-left: 20px;
+  padding-right: 20px;
   padding-bottom: 20px;
   margin-bottom: 30px;
   background: white;
@@ -172,7 +184,8 @@ input:focus {
 .single-view {
   background-color: black;
   color: white;
-
+  padding: 20px 20px;
+  margin-bottom: 10px;
 }
 
 #bars-nearby {
@@ -200,7 +213,14 @@ input:focus {
 }
 */
 
+#my-saved-events {
+  padding-left: 20px;
+  padding-right: 20px;
+}
 
+#bar-map {
+  margin-bottom: 15px;
+}
 
 
 

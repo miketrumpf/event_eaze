@@ -21,10 +21,19 @@ App.Views.Navigation = Backbone.View.extend({
   },
 
   searchForEvents: function() {
+    // var resultsDiv = document.getElementById("bar-results");
+    // resultsDiv.removeAtributes("style");
+    $("#bar-results").css({
+      "overflow": "scroll",
+      "background-color": "white"
+    });       
+    $("#bar-results").empty(); 
     App.events.fetch();
   },
 
   seeMyEvents: function() {
+    $("#main").empty();
+    $("#bar-results").empty();
     App.listEvents.fetch();
   }
 

@@ -187,40 +187,6 @@ app.delete("/bars/:id", function (req, res) {
   });
 });
 
-//----------------
-//Events <-> Bars
-//----------------
-
-// app.put("/events/:id/add_bar", function (req, res) {
-
-//   var eventId = req.params.id;
-//   var barId = req.body.bar_id;
-
-//   Event.findOne(eventId)
-//        .then(function(events) {
-//          Bar.findOne(barId)
-//             .then(function(bar) {
-//               post.addBar(bar);
-//               res.send("Linked!");
-//             });
-//        });
-// });
-
-// app.put("/events/:id/remove_bar", function (req, res) {
-
-//   var eventId = req.params.id;
-//   var barId = req.body.bar_id;
-
-//   Event.findOne(eventId)
-//        .then(function(events) {
-//          Bar.findOne(barId)
-//             .then(function(bar) {
-//               post.removeBar(bar);
-//               res.send("Yay");
-//             });
-//        });
-// });
-
 //Server
 app.listen( process.env.PORT || 3000, function() {
   console.log("Running!");

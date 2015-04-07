@@ -13,7 +13,17 @@ App.Views.ListEventView = Backbone.View.extend({
   },
 
   events: {
-    "click #bar-events": "showMap"
+    "click #bar-map": "showMap"
+  },
+
+  showMap: function() {
+    console.log("showMap clicked")
+    // debugger
+    $("#bar-results").empty();
+    var model = this.model.attributes;
+    var newMap = new App.Views.MapView({
+      model: model
+    });
   }
 
 });

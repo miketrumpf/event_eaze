@@ -4,7 +4,7 @@ App.Views.ListEventsView = Backbone.View.extend({
 
   initialize: function() {
     this.listenTo(this.collection, "reset", this.renderAll);
-    this.listenTo(this.collection, "add", this.renderAll);
+    this.listenTo(this.collection, "add", this.renderOne);
     //this.renderAll();
   },
 
