@@ -45,9 +45,7 @@ App.Views.Event = Backbone.View.extend({
 
     App.event = new App.Models.Event;
 
-    App.event.save(eventsModel).always(function() {
-      App.bars.fetch();
-    });
+    App.event.save(eventsModel);
 
   },
 
