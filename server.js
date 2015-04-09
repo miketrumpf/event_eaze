@@ -22,13 +22,11 @@ app.use(bodyParser());
 app.use(express.static(__dirname + "/public"));
 
 
-//EVENTFUL ROUTES
-
 //Get Events by City, Date, and Keyword.
 app.get("/search_for_events", function (req, res) {
 
   var query = req.query;
-  query.app_key = "MMVmB6tzJdSHNQR6";
+  query.app_key = process.env.EVENTFUL_API_KEY;
 
   request({
     uri: "http://api.eventful.com/json/events/search",
@@ -97,8 +95,8 @@ app.get("/search_for_bars", function (req, res) {
       //ll: "40.7,-74",
       ll: llToSearch,
       section: "drinks",
-      client_id:"BNAPSUX5Q2VGUM2JOAQGHXHGCK5WGGHWQPF2VWKZJG5XLKUL",
-      client_secret:"F4OSS11HXEOPZP41WPYYXDSV2NHR2BYZGZWNX44OJ3PEBLZ0",
+      client_id: process.env.FOURSQUARE_API_CLIENT_KEY,
+      client_secret:process.env.FOURSQUARE_API_SECRET_KEY,
       v: "20150401"
     }
   }, function(error, response, body) {
