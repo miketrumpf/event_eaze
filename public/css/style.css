@@ -129,7 +129,7 @@ button:focus {
 #main {
   position: relative;
   float: left;
-  width: 42%;
+  width: 43%;
   margin-left: 35px;
   text-align: center;
 /*  border: 1px solid black;*/
@@ -159,7 +159,7 @@ button:focus {
 #bar-results {
   position: relative;
   float: right;
-  width: 42%;
+  width: 43%;
   margin-right: 35px;
   text-align: center;
 /*  border: 1px solid black;*/
