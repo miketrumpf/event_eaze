@@ -3,12 +3,12 @@
 
 body {
   background: black;
-  background-image: url("../images/brickwall.png");
-/*  background-size: 100%;
-  background-repeat: no-repeat;*/
+  background-image: url("../images/concert2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
   z-index: 0;
   font-family: 'Poiret One', cursive;
-  color: black;
+  /*color: black;*/
 }
 
 h1 {
@@ -17,7 +17,7 @@ h1 {
 
 #eventeaze h1 {
   font-size: 50px;
-  color: #DEB887;
+  color: #3F3D3B;
   margin-left: 45px;
   font-family: 'Monofett', cursive;
 }
