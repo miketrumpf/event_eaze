@@ -12,7 +12,9 @@ App.Views.ListEventView = Backbone.View.extend({
 
   events: {
 
-    "click #bar-map": "showMap"
+    "click #bar-map": "showMap",
+    "click #delete": "delete"
+
   },
 
   showMap: function() {
@@ -22,6 +24,30 @@ App.Views.ListEventView = Backbone.View.extend({
     var newMap = new App.Views.MapView({
       model: model
     });
+  },
+
+  delete: function() {
+    
+    eventId= this.model.id;
+
+debugger
+
+    $.ajax({
+      method: "DELETE",
+      url: "/events/" + eventId
+    })
+      .done(this.reRender);
+  },
+
+  reRender: function() {
+    
+    $("#main").empty();
+    App.listEvents = new App.Collections.MyEvents;
+    App.listEventsView = new App.Views.ListEventsView({ collection: App.listEvents });
+    App.listEvents.fetch();
+    debugger
+    
   }
+
 
 });

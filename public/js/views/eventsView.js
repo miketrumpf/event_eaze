@@ -6,7 +6,7 @@ App.Views.Events = Backbone.View.extend({
     //console.log("Events collection view created");
     this.listenTo(this.collection, "reset", this.renderAll);
     this.listenTo(this.collection, "add", this.renderAll);
-    this.listenTo(this.collection, "add", this.searhForBars);
+    // this.listenTo(this.collection, "add", this.searhForBars);
   },
 
   renderAll: function() {

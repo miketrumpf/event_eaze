@@ -67,6 +67,9 @@ app.get("/events/:id", function (req, res) {
        });
 });
 
+//create route to get last saved event id.  
+
+
 //route to delete event
 app.delete("/events/:id", function (req, res) {
   Event.findOne({

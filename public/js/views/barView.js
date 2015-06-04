@@ -25,8 +25,9 @@ App.Views.Bar = Backbone.View.extend({
   },
 
   saveBar: function(model) {
-
+    
     var lastId = App.myEvents.last().id;
+    
     var lastIdPlus = lastId + 1;
     console.log(lastIdPlus);
 
