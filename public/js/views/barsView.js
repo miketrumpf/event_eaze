@@ -8,7 +8,7 @@ App.Views.Bars = Backbone.View.extend({
   },
 
   renderAll: function() {
-    this.$el.empty();
+    this.$el.empty().addClass("bar-square");
     this.collection.each(this.renderOne, this);
   },
 

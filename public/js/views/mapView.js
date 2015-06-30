@@ -10,6 +10,7 @@ App.Views.MapView = Backbone.View.extend({
         center: {lat: parseFloat(this.model.latitude), lng: parseFloat(this.model.longitude)},
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
+    debugger
 
       this.collection = this.model.bars
       this.map = new google.maps.Map(this.el, mapOptions);
@@ -18,6 +19,9 @@ App.Views.MapView = Backbone.View.extend({
     },
 
     render: function(){
+
+
+
       var marker = new google.maps.Marker({
         map: this.map,
         position: {lat: parseFloat(this.model.latitude), lng: parseFloat(this.model.longitude)},
@@ -37,6 +41,9 @@ App.Views.MapView = Backbone.View.extend({
     },
 
     renderBarMarkers: function(bar){
+
+      debugger
+
       var marker = new google.maps.Marker({
         map: this.map,
         position: {lat: parseFloat(bar.latitude), lng: parseFloat(bar.longitude)},
