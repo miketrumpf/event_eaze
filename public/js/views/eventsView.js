@@ -10,7 +10,8 @@ App.Views.Events = Backbone.View.extend({
   },
 
   renderAll: function() {
-    this.$el.empty();
+    $("#easy-way").hide();
+    this.$el.empty().addClass("events-square");
     this.collection.each(this.renderOne, this);
   },
 
